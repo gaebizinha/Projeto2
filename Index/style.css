@@ -272,8 +272,28 @@ input{
     width: 70vw;
 }
 
+.dropdown-content {
+    display: none;
+}
 
+.dropdown-content a {
+    float: none;
+}
 
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-item {
+    color: #767676;
+}
+
+.dropdown-item:hover {
+    text-decoration: none;
+    color:#0F241D;
+    background:#F9F9F9;
+    transition: 0.5s;
+}
 
 @media (min-width: 900px) {
     .Img1 img {
@@ -379,18 +399,23 @@ input{
         width: 15vw;
     }
 
-    nav ul li a:hover {
+    nav ul li > a:hover {
         text-decoration: none;
         color: #FFF455;
         background: #A0A8A5;
         transition: 0.5s;
     }
 
-    nav ul li a:active {
+    nav ul li > a:active {
         text-decoration: none;
         color:#F9F9F9;
         background: #FFF455;
         transition: 0s;
+    }
+
+    a:hover {
+        text-decoration: none;
+        color: inherit;
     }
 
     .lineBrk1 {
@@ -444,6 +469,16 @@ input{
     .imgTxt4 {
         padding-top: 16vh;
     }
+
+    .dropdown-content {
+        border-radius: 10px;
+        background:#F9F9F9;
+        border: 0;
+        box-shadow: #ccc;
+        transition: all 0.3s ease;
+        position: absolute;
+    }
+
 }
 
 @media (max-width: 900px) {
@@ -547,13 +582,7 @@ input{
     #click:checked ~ ul {
         left: 0%;
     }
-    #click:checked ~ body {
-        overflow-y: hidden ;
-    }
 
-    #click:checked ~ .menu-btn i:before {
-        content: "\f00d";
-    }
 
     #map {
         height: 40vh;
@@ -602,5 +631,17 @@ input{
     }
     .imgTxt4 {
         padding-top: 10vh;
+    }
+
+    .dropdown {
+        float: none;
+    }
+
+    .dropdown-content{
+        padding-top: 30px;
+    }
+    
+    .dropdown-content a {
+        padding: 10px;
     }
 }
