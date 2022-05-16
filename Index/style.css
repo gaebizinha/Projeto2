@@ -122,6 +122,14 @@ p.txt1 {
     padding: 5vw;
 }
 
+.imgTxt4 {
+    display: flex;
+    padding-top: 8vh;
+    justify-content: space-evenly;
+}
+
+
+
 div.card {
     border-radius: 10px;
     text-align: center;
@@ -253,6 +261,17 @@ input{
     border-radius:8px;
     border-color: #ebebeb;
 }
+.closesec{
+    float:right;
+    
+    padding-right: 5%;
+    padding-top: 3%;
+
+}
+.busca{
+    width: 70vw;
+}
+
 
 
 
@@ -418,6 +437,13 @@ input{
     label{
         font-family: 'Poppins', sans-serif;
     }
+    
+    .iconpriv{
+        width: 2vw;
+    }
+    .imgTxt4 {
+        padding-top: 16vh;
+    }
 }
 
 @media (max-width: 900px) {
@@ -570,5 +596,11 @@ input{
 
     img.QRcode {
         width: 70%;
+    }
+    .iconpriv{
+        width: 4vw;
+    }
+    .imgTxt4 {
+        padding-top: 10vh;
     }
 }
