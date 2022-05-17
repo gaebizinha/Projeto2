@@ -125,7 +125,7 @@ p.txt1 {
 .imgTxt4 {
     display: flex;
     padding-top: 8vh;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 
@@ -278,6 +278,7 @@ input{
     width: 30vw !important;
 }
 
+
 .dropdown-content {
     display: none;
 }
@@ -304,6 +305,8 @@ input{
     background: #F9F9F9;
     padding-top: 5%;
 }
+
+
 
 @media (min-width: 900px) {
     .Img1 img {
@@ -488,6 +491,12 @@ input{
         transition: all 0.3s ease;
         position: absolute;
     }
+    .inputlarge { 
+        line-height: 24px;
+        margin: 0 !important;
+        width: 60vw !important;
+    }
+    
 
 }
 
@@ -654,6 +663,12 @@ input{
     .dropdown-content a {
         padding: 10px;
     }
+    .inputlarge { 
+        line-height: 24px;
+        margin: 0 !important;
+        width: 70vw !important;
+    }
+
 }
 
 .login {
@@ -701,6 +716,18 @@ input{
   }
 
   .busca{
+    font-family: "Poppins", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 200%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+
+  .inputlarge{
     font-family: "Poppins", sans-serif;
     outline: 0;
     background: #f2f2f2;
