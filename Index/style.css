@@ -226,6 +226,10 @@ button {
     transition: transform 0.3s ease;
 }
 
+.smBtn {
+    width: 5vw;
+}
+
 button:hover {
     transform: translate(0, -7px);
 }
@@ -268,8 +272,10 @@ input{
     padding-top: 3%;
 
 }
-.busca{
-    width: 70vw;
+.busca { 
+    line-height: 24px;
+    margin: 0 !important;
+    width: 30vw !important;
 }
 
 .dropdown-content {
