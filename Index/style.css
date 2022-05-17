@@ -300,6 +300,10 @@ input{
     background:#F9F9F9;
     transition: 0.5s;
 }
+.apoiadores{
+    background: #F9F9F9;
+    padding-top: 5%;
+}
 
 @media (min-width: 900px) {
     .Img1 img {
