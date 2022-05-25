@@ -39,11 +39,11 @@ server.listen(portback, hostname, () => {
 });
 
 // Insere um registro (é o C do CRUD - Create)
-server.post('/userinsert', urlencodedParser, (req, res) => {
+server.post('/userinsert', urlencodedParser, (req, res) => {// inicia a função. /userint é nosso endpoint
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
-	sql = "INSERT INTO acolhido (id_atendido) VALUES ('3')";
+	sql = "INSERT INTO acolhido (id_atendido) VALUES ('3')"; // insere um valor no banco de dados (só está sendo passado o id, porque ele é obrigatorio)
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.run(sql, [],  err => {
 		if (err) {
