@@ -80,68 +80,83 @@
     <hr class="lineBrk1"> 
     <hr class="lineBr2">
 
-    <div>
+      <div>
         
         <h2 align="center" class="ttl2">Quero ser voluntário de Revirar!</h2>
           
-        <div class="formulario">
-          <div align="center">
-            <label>Nome: </label>
-            <input type="text">
-          </div>
-          
-        <div align="center">
-            <label>Email:</label> 
-            <input type="email">
-        </div>
-          
-        <div align="center">
-            <label>Data de nascimento:</label> 
-             <input type="date">
-        </div>
+    <form
+
+    action="https://sheetdb.io/api/v1/r627hz6juzfj8"
+    method="POST"
+    name="SerVoluntarioRevirar"
+    
+    >
+
+          <div class="formulario">
+            <div align="center">
+              <label>Nome: </label>
+              <input type="text" name="data[nome]">
+            </div>
             
-        <div align="center">
-            <label>Telefone:</label> 
-            <input type="number">
-        </div>
-          
-        <div align="center">
-            <label>Com o que você gostaria de ajudar:</label><br>
-
-            <table>
-             <tr>
-                <td>
-                  <input type="checkbox" id="opc1" value="Lorem">
-                  <label for="opc1">Lorem</label><br>
-                  <input type="checkbox" id="opc2" value="Lorem">
-                  <label for="opc2">Lorem</label><br>
-                  <input type="checkbox" id="opc3" value="Lorem">
-                  <label for="opc3">Lorem</label><br>
-                  <input type="checkbox" id="opc4" value="Lorem">
-                  <label for="opc4">Lorem</label><br>
-                </td>
-          
-                <td>
-                  <input type="checkbox" id="opc5" value="Lorem">
-                  <label for="opc5">Lorem</label><br>
-                   <input type="text" id="opc5" value="">
-                      
-                </td>
-              </tr>
-            </table>
-          </div>
-          
-          <div align="center"> 
-            <button>Enviar</button>
-          </div>
-          
           <div align="center">
-            <p class="txt1">*Em breve entraremos em contato!</p>
-          </div>  
-          
+              <label>Email:</label> 
+              <input type="email" name="data[email]">
+          </div>
+            
+          <div align="center">
+              <label>Data de nascimento:</label> 
+              <input type="date" name="data[data_nascimento]">
+          </div>
+              
+          <div align="center">
+              <label>Telefone:</label> 
+              <input type="number" name="data[telefone]" placeholder="(XX) XXXX-XXXX">
+          </div>
+            
+          <div align="center">
+              <label>Com o que você gostaria de ajudar:</label><br>
+              <input type="text" name="data[ajuda]">
+              <br>
+              <br>
+
+              <!-- <table>
+              <tr>
+                  <td>
+                    <input type="checkbox" id="opc1" value="Lorem">
+                    <label for="opc1">Lorem</label><br>
+                    <input type="checkbox" id="opc2" value="Lorem">
+                    <label for="opc2">Lorem</label><br>
+                    <input type="checkbox" id="opc3" value="Lorem">
+                    <label for="opc3">Lorem</label><br>
+                    <input type="checkbox" id="opc4" value="Lorem">
+                    <label for="opc4">Lorem</label><br>
+                  </td>
+            
+                  <td>
+                    <input type="checkbox" id="opc5" value="Lorem">
+                    <label for="opc5">Lorem</label><br>
+                    <input type="text" id="opc5" value="">
+                        
+                  </td>
+                </tr>
+              </table>
+            </div> -->
+            
+            <div align="center"> 
+              <button>
+                Enviar
+              </button>
+            </div>
+            
+            <div align="center">
+              <p class="txt1">*Em breve entraremos em contato!</p>
+            </div>  
+            
+          </div>
+
         </div>
 
-      </div>
+    
         
         
   </div>
@@ -161,7 +176,10 @@
           <a href="#"><i class="fa fa-facebook"></i></a>
           <a href="#"><i class="fa fa-youtube"></i></a>
       </ul>
+      <p align="center" class="txt1"><i class="fa-solid fa-lock"></i><a href="./LoginAreaPriv.html">  Área privada</a></p>
+      
   </div>
+
   <img src="./templates/images/logo.png" alt="" class="">
 </footer>
 

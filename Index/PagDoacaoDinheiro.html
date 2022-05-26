@@ -61,7 +61,7 @@
         
         <div class="pargphStart">
             <h2 class="ttl1">Desejo fazer uma doação em dinheiro!</h2>
-            <p class="txt1">Envie suas informações!</p>
+            <p class="txt1">Queremos lhe conhecer melhor, deixe suas informações caso se sinta confortável!</p>
             <div>
                 <label>Nome: </label>
                 <input type="text"> 
@@ -77,8 +77,21 @@
                 <br>
                 <br>
 
-                <button>Enviar</button>
-                <p class="txt2"></p>
+                <button type="button"  data-toggle="modal" data-target="#modalExemplo">Enviar</button>
+                  
+                  <!-- Modal -->
+                  <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Informações enviadas com sucesso, obrigada por contribuir!</h5>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button"  data-dismiss="modal">Fechar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 
             </div>
         </div>
@@ -103,15 +116,18 @@
 
 
     <footer>
-        <div>
-            <h2 class="ttl1">Redes Sociais</h2>
-            <ul>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-youtube"></i></a>
-            </ul>
-        </div>
-        <img src="./templates/images/logo.png" alt="" class="">
+      <div>
+          <h2 class="ttl1">Redes Sociais</h2>
+          <ul>
+              <a href="#"><i class="fa fa-instagram"></i></a>
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-youtube"></i></a>
+          </ul>
+          <p align="center" class="txt1"><i class="fa-solid fa-lock"></i><a href="./LoginAreaPriv.html">  Área privada</a></p>
+          
+      </div>
+    
+      <img src="./templates/images/logo.png" alt="" class="">
     </footer>
   
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

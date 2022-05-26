@@ -4,7 +4,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins:wght@700&display=swap');
 
-
+:target .untarget{
+    display: none;
+}
 * {
     margin: 0;
     padding: 0;
@@ -305,6 +307,10 @@ input{
     background: #F9F9F9;
     padding-top: 5%;
 }
+.iconesmedio{
+    font-size: 5vw;
+}
+
 
 
 
@@ -431,6 +437,11 @@ input{
         color: inherit;
     }
 
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
     .lineBrk1 {
         display: none;
     }
@@ -495,6 +506,9 @@ input{
         line-height: 24px;
         margin: 0 !important;
         width: 60vw !important;
+    }
+    .imgsobre{
+        width: 50vw;
     }
     
 
@@ -667,6 +681,9 @@ input{
         line-height: 24px;
         margin: 0 !important;
         width: 70vw !important;
+    }
+    .imgsobre{
+        width: 80vw;
     }
 
 }
