@@ -109,6 +109,13 @@ p.txt1 {
     padding-bottom: 20px;
 }
 
+p.txt2 {
+    font-family: 'DM Sans';
+    color: #767676;
+    margin: 0;
+    font-size: x-large;
+}
+
 .imgTxt1 {
     padding-bottom: 7vh;
     align-items: center;
@@ -226,6 +233,10 @@ button {
     align-self: center;
     box-shadow: 0px 5px 10px #ebebeb;
     transition: transform 0.3s ease;
+}
+
+button.marg {
+    margin: 8px;
 }
 
 .smBtn {
