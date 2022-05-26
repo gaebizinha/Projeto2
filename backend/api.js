@@ -9,7 +9,7 @@ const portback = 3061;
 const sqlite3 = require('sqlite3').verbose();
 const server = express();
 const DBPATH = 'revirarDB.db';
-server.use(express.static('.'));
+server.use(express.static('../index'));
 server.use(express.json());
 
 
