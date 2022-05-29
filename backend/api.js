@@ -9,7 +9,7 @@ const portback = 3061;
 const sqlite3 = require('sqlite3').verbose();
 const server = express();
 const DBPATH = 'revirarDB.db';
-server.use(express.static('../index'));
+server.use(express.static("../Index"));
 server.use(express.json());
 
 
@@ -32,18 +32,12 @@ server.get('/users', (req, res) => {
 	});
 	db.close(); // Fecha o banco
 });
-
-/* Inicia o servidor */
-server.listen(portback, hostname, () => {
-  console.log(`BD server running at http://${hostname}:${portback}/`);
-});
-
 // Insere um registro (é o C do CRUD - Create)
-server.post('/userinsert', urlencodedParser, (req, res) => {// inicia a função. /userint é nosso endpoint
+server.post('/userinsert', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
-	sql = "INSERT INTO acolhido (id_atendido) VALUES ('3')"; // insere um valor no banco de dados (só está sendo passado o id, porque ele é obrigatorio)
+	sql = "INSERT INTO acolhido (id_atendido, nm_nome) VALUES ('" + req.body.userId + "','"+ req.body.nm_nome +"' )";
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.run(sql, [],  err => {
 		if (err) {
@@ -53,3 +47,25 @@ server.post('/userinsert', urlencodedParser, (req, res) => {// inicia a função
 	db.close(); // Fecha o banco
 	res.end();
 });
+
+server.patch('/editarUsuarios', urlencodedParser, (req, res) => {
+	res.statusCode = 200;
+	console.log(req.body.userId)
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+	console.log("req:");
+	sql = "UPDATE acolhido SET nm_nome = '" + req.body.title + "' WHERE id_atendido = " + req.body.userId;
+
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+	db.run(sql, [],  err => {
+		if (err) {
+		    throw err;
+		}
+		res.end();
+	});
+	db.close(); // Fecha o banco
+});
+/* Inicia o servidor */
+server.listen(portback, hostname, () => {
+	console.log(`BD server running at http://${hostname}:${portback}/`);
+  });
