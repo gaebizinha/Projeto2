@@ -33,12 +33,12 @@ server.get('/users', (req, res) => {
 	db.close(); // Fecha o banco
 });
 // Insere um registro (é o C do CRUD - Create)
-server.post('/userinsert', urlencodedParser, (req, res) => {
+server.post('/cadastraLugar', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
-	sql = "INSERT INTO acolhido (id_atendido, nm_nome) VALUES ('" + req.body.userId + "','"+ req.body.nm_nome +"' )";
-	var db = new sqlite3.Database(DBPATH); // Abre o banco
+	sql = "INSERT INTO post (lat, long, dt_visita) VALUES ('" + req.body.lat + "','"+ req.body.long +"', '"+ req.body.dt_visita +"' )";
+	var db = new sqlite3.Database(DBPATH); // Abre o banco	
 	db.run(sql, [],  err => {
 		if (err) {
 		    throw err;
