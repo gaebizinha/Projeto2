@@ -69,3 +69,70 @@ server.patch('/editarUsuarios', urlencodedParser, (req, res) => {
 server.listen(portback, hostname, () => {
 	console.log(`BD server running at http://${hostname}:${portback}/`);
   });
+//Doação Post.............................................................//
+  server.post('/criaDoacao', urlencodedParser, (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+	sql = "INSERT INTO doacao (tlt_doacao, ds_doacao, vl_valor) VALUES ('" + req.body.tlt_doacao + "','"+ req.body.ds_doacao +"' , '"+ req.body.vl_valor +"')";
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+	db.run(sql, [],  err => {
+		if (err) {
+		    throw err;
+		}
+	});
+	db.close(); // Fecha o banco
+	res.end();
+});
+//Doação Get.........................................................//
+server.get('/veDoacao', (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+  var sql = 'SELECT * FROM doacao';
+	db.all(sql, [],  (err, rows ) => {
+		if (err) {
+		    throw err;
+		}
+		res.json(rows);
+	});
+	db.close(); // Fecha o banco
+});
+//Doação Update//
+ 
+server.patch('/editaDoacao', urlencodedParser, (req, res) => {
+	res.statusCode = 200;
+	console.log(req.body.userId)
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+	console.log("req:");
+	sql = "UPDATE doacao SET doacao = '" + req.body.ds_doacao + "' WHERE tlt_doacao = " + req.body.vl_valor;
+
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+	db.run(sql, [],  err => {
+		if (err) {
+		    throw err;
+		}
+		res.end();
+	});
+	db.close(); // Fecha o banco
+});
+//Doação Delete//
+
+app.delete('/excluiDoacao', urlencodedParser, (req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+    sql = "DELETE FROM doacao WHERE ds_doacao = " + req.body.tlt_doacao, + req.body.vl_valor;
+	
+    var db = new sqlite3.Database(DBPATH); // Abre o banco
+    db.run(sql, [],  err => {
+        if (err) {
+            throw err;
+        }
+        res.end();
+    });
+    db.close(); // Fecha o banco
+});
+
