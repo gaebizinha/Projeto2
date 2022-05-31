@@ -13,39 +13,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revirar: Página Inicial</title>
 </head>
-<header>
-    
+<header>  
     <nav>
         <div>
-            <img src="./templates/images/logo.png" alt="logo revirar" class="logo">
+            <a href="PagIncial.html">
+                <img src="./templates/images/logo.png" alt="logo revirar" class="logo">
+            </a>
         </div>
         <input type="checkbox" id="click">
         <label for="click" class="menu-btn"><i class="fas fa-bars"></i></label>
         <ul>
-            <li><a href="./PagIncial.html">início</a></li>
+            <li><a class="navLink" href="PagIncial.html">início</a></li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuItem" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="navLink nav-link dropdown-toggle" href="#" id="navbarDropdownMenuItem" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   O Revirar
                 </a>
                 <div class="dropdown-content" aria-labelledby="navbarDropdownMenuItem">
-                  <a class="dropdown-item" href="./PagSobre.html">Sobre o revirar</a>
-                  <a class="dropdown-item" href="./PagComoAtua.html">Como atuamos</a>
-                  <a class="dropdown-item" href="./PagImpacto.html">Impacto</a>
+                  <a class="dropdown-item" href="PagSobre.html">Sobre o revirar</a>
+                  <a class="dropdown-item" href="PagComoAtua.html">Como atuamos</a>
+                  <a class="dropdown-item" href="PagImpacto.html">Impacto</a>
                 </div>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuItem" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="navLink nav-link dropdown-toggle" href="#" id="navbarDropdownMenuItem" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Apoie
                 </a>
                 <div class="dropdown-content" aria-labelledby="navbarDropdownMenuItem">
-                  <a class="dropdown-item" href="./PagComoApoiar.html">Como apoiar</a>
-                  <a class="dropdown-item" href="./PagSerVoluntario.html">Ser voluntário</a>
-                  <a class="dropdown-item" href="./PagTiposDoação.html">Ser doador</a>
+                  <a class="dropdown-item" href="PagComoApoiar.html">Como apoiar</a>
+                  <a class="dropdown-item" href="PagSerVoluntario.html">Ser voluntário</a>
+                  <a class="dropdown-item" href="PagTiposDoação.html">Ser doador</a>
                 </div>
               </li>
-            <li><a href="#">blog</a></li>
+            <li><a  class="navLink" href="#">blog</a></li>
            
-            <li><button><a href="./PagDoacaoDinheiro.html">Doe Agora</a></button></li>
+            <li>
+                <a href="PagDoacaoDinheiro.html">
+                    <button>Doe Agora</button>
+                </a>
+                
+            </li>
             <li>
                 
             </li>
@@ -62,7 +68,7 @@
         <div class="pargphCenter">
             <h2 class="ttl1">Projeto Social</h2>
             <p class="txt1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-            <button>Conheça mais sobre o projeto!</button>
+            <a href="PagComoAtua.html"><button>Conheça mais sobre o projeto!</button></a>
         </div>
     </div>
     <hr>
@@ -77,7 +83,7 @@
             <p class="txt1">In placerat, felis vitae sodales dictum, lacus quam pretium mi, ut pretium urna turpis eu dui. Vestibulum id ullamcorper nibh. Donec luctus, nunc finibus elementum suscipit, tortor augue vulputate sapien, vitae feugiat enim augue sed.</p>
             <br>   
             <p class="txt1">Quisque id aliquam elit. Suspendisse congue pharetra maximus. Duis rutrum velit a leo euismod dictum. Sed sodales est efficitur arcu tincidunt tincidunt.</p>
-            <button>Saiba mais sobre o projeto!</button>
+            <a href="PagSobre.html"><button>Saiba mais sobre o projeto!</button></a>
         </div>
     </div>
     <hr class="lineBrk2">
@@ -89,21 +95,21 @@
         <div class="boxRow">
             <div class="card">
                 <div>
-                    <img src="./templates/icons/icon1.png" alt="" class="icon1">
+                    <i class="fa-solid fa-book-open icon1"></i>
                     <h2 class="ttl2">Reduzir evasão escolar</h2>
                     <p class="txt1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sagittis arcu quis nisi luctus, id accumsan felis tristique.</p>
                 </div>    
             </div>
             <div class="card">
                 <div>
-                    <img src="./templates/icons/icon2.png" alt="" class="icon1">
+                    <i class="fa-solid fa-utensils icon1"></i>
                     <h2 class="ttl2">Diminuir a fome mundial</h2>
                     <p class="txt1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sagittis arcu quis nisi luctus, id accumsan felis tristique.</p> 
                 </div>     
             </div>
             <div class="card">
                 <div>
-                    <img src="./templates/icons/icon3.png" alt="" class="icon1">
+                    <i class="fa-solid fa-stethoscope icon1"></i>
                     <h2 class="ttl2">Saúde preventiva</h2>
                     <p class="txt1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sagittis arcu quis nisi luctus, id accumsan felis tristique.</p> 
                 </div>
@@ -145,8 +151,21 @@
     <div class="imgTxt1">
         <div class="pargphCenter">
             <h2 class="ttl1">Onde estamos localizados</h2>
-            <button>Entrar em contato</button>
-            <img src="./templates/images/Contatos.png" alt="" class="Img3">
+            <a href="#"><button>Entrar em contato</button></a>
+            <div class="centerList">
+                <div class="centerRow" >
+                    <i class="fa-solid fa-phone fa iconYellow"></i>
+                    <p class="txt2">11 99999-9999</p>
+                </div>
+                <div class="centerRow">
+                    <i class="fa-solid fa-location-dot fa iconYellow"></i>
+                    <p class="txt2">R. Endereço do Revirar, 356</p>
+                </div>
+                <div class="centerRow">
+                    <i class="fa-solid fa-envelope fa iconYellow"></i>
+                    <p class="txt2">revirar@email.com</p>
+                </div>
+            </div>
         </div>
         <hr class="lineBrk1">
         <div class="mapa">
@@ -176,7 +195,7 @@
     </div>
   
     <img src="./templates/images/logo.png" alt="" class="">
-  </footer>
+</footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

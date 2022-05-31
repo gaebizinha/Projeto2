@@ -35,6 +35,11 @@ nav {
     padding: 0px 50px 0px 50px;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .logo {
     transition: transform 0.5s ease;
 }
@@ -137,7 +142,37 @@ p.txt2 {
     justify-content: center;
 }
 
+div.centerList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
 
+.inl-block {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.stretch {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stretch-ctnt {
+    width: 100%;
+    margin-left: 10px;
+}
+
+.padding5px {
+    padding: 5px;
+}
+
+.padding20px {
+    padding: 20px;
+}
 
 div.card {
     border-radius: 10px;
@@ -185,13 +220,29 @@ div.card2:hover {
     padding-bottom: 0
 }
 
+.slim {
+    padding: 20px;
+}
+
+.centerRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .icon1 {
-    width: 20vw;
+    font-size: 10vw;
     transition: transform 0.3s ease;
 }
 
 .icon1:hover {
     transform: translate(0px , -10px);
+}
+
+.iconYellow {
+    padding: 10px;
+    color: #FFF455 !important;
+    font-size:x-large;
 }
 
 .fa {
@@ -323,9 +374,11 @@ input{
 }
 
 
-
-
 @media (min-width: 900px) {
+    .sm-screen {
+        display: none;
+    }
+
     .Img1 img {
         width: 100%;
     }
@@ -363,6 +416,10 @@ input{
         align-items: center;
         display: flex;
         flex-direction: row;
+    }
+
+    .slim {
+        width: 60%;
     }
 
     div.card2 {
@@ -429,14 +486,14 @@ input{
         width: 15vw;
     }
 
-    nav ul li > a:hover {
+    nav ul li > a.navLink:hover {
         text-decoration: none;
         color: #FFF455;
         background: #A0A8A5;
         transition: 0.5s;
     }
 
-    nav ul li > a:active {
+    nav ul li > a.navLink:active {
         text-decoration: none;
         color:#F9F9F9;
         background: #FFF455;
@@ -464,14 +521,13 @@ input{
     }
 
     .imgsb1{
-        width:38vw;
-        margin-right:3%;
+        width: 100%;
     }
     .icon2{
         width:11vw;
     }
     .imgsr{
-        width: 35vw;
+        width: 40vw;
     }
     #ods{
         width: 100%;
@@ -526,6 +582,10 @@ input{
 }
 
 @media (max-width: 900px) {
+    .lg-screen {
+        display: none;
+    }
+
     .Img1 {
         width: 100%;
     }
@@ -555,6 +615,24 @@ input{
 
     div.card2 {
         margin: 10%;
+    }
+
+    .slim {
+        width: 90%;
+        margin: 30px !important;
+    }
+
+    .sm-screen-RLpadding10 {
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+
+    .sm-screen-centerList {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
     }
 
     body div img {
@@ -640,7 +718,7 @@ input{
     }
 
     .imgsb1{
-        margin:3%;
+        margin:0;
     }
 
     .valores{
@@ -716,7 +794,7 @@ input{
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   }
 
-  .box input {
+.box input {
     font-family: "Poppins", sans-serif;
     outline: 0;
     background: #f2f2f2;
@@ -728,7 +806,7 @@ input{
     font-size: 14px;
   }
 
-  .buttonLog{
+.buttonLog{
     background-color: #FFF455;
     border: 0;
     padding: 5px;
@@ -743,7 +821,7 @@ input{
 
   }
 
-  .busca{
+.busca{
     font-family: "Poppins", sans-serif;
     outline: 0;
     background: #f2f2f2;
@@ -755,7 +833,7 @@ input{
     font-size: 14px;
   }
 
-  .inputlarge{
+.inputlarge{
     font-family: "Poppins", sans-serif;
     outline: 0;
     background: #f2f2f2;

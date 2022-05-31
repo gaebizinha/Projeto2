@@ -15,18 +15,19 @@
 </head>
 <body class="sobre">
     
-    <header>
-    
+    <header>  
         <nav>
             <div>
-                <img src="./templates/images/logo.png" alt="logo revirar" class="logo">
+                <a href="./PagIncial.html">
+                    <img src="./templates/images/logo.png" alt="logo revirar" class="logo">
+                </a>
             </div>
             <input type="checkbox" id="click">
             <label for="click" class="menu-btn"><i class="fas fa-bars"></i></label>
             <ul>
-                <li><a href="./PagIncial.html">início</a></li>
+                <li><a class="navLink" href="./PagIncial.html">início</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuItem" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="navLink nav-link dropdown-toggle" href="#" id="navbarDropdownMenuItem" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       O Revirar
                     </a>
                     <div class="dropdown-content" aria-labelledby="navbarDropdownMenuItem">
@@ -36,7 +37,7 @@
                     </div>
                   </li>
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuItem" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="navLink nav-link dropdown-toggle" href="#" id="navbarDropdownMenuItem" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Apoie
                     </a>
                     <div class="dropdown-content" aria-labelledby="navbarDropdownMenuItem">
@@ -45,19 +46,23 @@
                       <a class="dropdown-item" href="./PagTiposDoação.html">Ser doador</a>
                     </div>
                   </li>
-                <li><a href="#">blog</a></li>
+                <li><a  class="navLink" href="#">blog</a></li>
                
-                <li><button><a href="./PagDoacaoDinheiro.html">Doe Agora</a></button></li>
+                <li>
+                    <a href="./PagDoacaoDinheiro.html">
+                        <button>Doe Agora</button>
+                    </a>
+                    
+                </li>
                 <li>
                     
                 </li>
             </ul>
         </nav> 
     </header>
-
     <div class="imgTxt2">
-        
         <div class="pargphStart">
+            <br class="lg-screen">
             <h2 class="ttl1">Sobre o Revirar</h2>
             <p class="txt1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sagittis arcu quis nisi luctus, id accumsan felis tristique. Proin quis bibendum diam. Sed consequat nisl laoreet eros ultricies pellentesque. Nullam in est porta, pellentesque massa vitae, vehicula risus.</p>
             <br>     
@@ -223,7 +228,20 @@
         <div class="pargphCenter">
             <h2 class="ttl1">Onde estamos localizados</h2>
             <button>Entrar em contato</button>
-            <img src="./templates/images/Contatos.svg" alt="" class="Img3">
+            <div class="centerList">
+                <div class="centerRow" >
+                    <i class="fa-solid fa-phone fa iconYellow"></i>
+                    <p class="txt2">11 99999-9999</p>
+                </div>
+                <div class="centerRow">
+                    <i class="fa-solid fa-location-dot fa iconYellow"></i>
+                    <p class="txt2">R. Endereço do Revirar, 356</p>
+                </div>
+                <div class="centerRow">
+                    <i class="fa-solid fa-envelope fa iconYellow"></i>
+                    <p class="txt2">revirar@email.com</p>
+                </div>
+            </div>
         </div>
         <hr class="lineBrk1">
         <div class="mapa">

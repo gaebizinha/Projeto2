@@ -17,18 +17,19 @@
 
 <body>
   
-  <header>
-    
+  <header>  
     <nav>
         <div>
-            <img src="./templates/images/logo.png" alt="logo revirar" class="logo">
+            <a href="./PagIncial.html">
+                <img src="./templates/images/logo.png" alt="logo revirar" class="logo">
+            </a>
         </div>
         <input type="checkbox" id="click">
         <label for="click" class="menu-btn"><i class="fas fa-bars"></i></label>
         <ul>
-            <li><a href="./PagIncial.html">início</a></li>
+            <li><a class="navLink" href="./PagIncial.html">início</a></li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuItem" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="navLink nav-link dropdown-toggle" href="#" id="navbarDropdownMenuItem" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   O Revirar
                 </a>
                 <div class="dropdown-content" aria-labelledby="navbarDropdownMenuItem">
@@ -38,7 +39,7 @@
                 </div>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuItem" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="navLink nav-link dropdown-toggle" href="#" id="navbarDropdownMenuItem" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Apoie
                 </a>
                 <div class="dropdown-content" aria-labelledby="navbarDropdownMenuItem">
@@ -47,15 +48,20 @@
                   <a class="dropdown-item" href="./PagTiposDoação.html">Ser doador</a>
                 </div>
               </li>
-            <li><a href="#">blog</a></li>
+            <li><a  class="navLink" href="#">blog</a></li>
            
-            <li><button><a href="./PagDoacaoDinheiro.html">Doe Agora</a></button></li>
+            <li>
+                <a href="./PagDoacaoDinheiro.html">
+                    <button>Doe Agora</button>
+                </a>
+                
+            </li>
             <li>
                 
             </li>
         </ul>
     </nav> 
-</header>
+  </header>
   
 
 
@@ -77,10 +83,9 @@
 
     </div>
 
-    <hr class="lineBrk1"> 
-    <hr class="lineBr2">
+    <hr><br>
 
-      <div>
+      <div class="sm-screen-RLpadding10">
         
         <h2 align="center" class="ttl2">Quero ser voluntário de Revirar!</h2>
           
@@ -93,24 +98,24 @@
     >
 
           <div class="formulario">
-            <div align="center">
+            <div align="center" class="stretch padding5px">
               <label>Nome: </label>
-              <input type="text" name="data[nome]">
+              <input class="stretch-ctnt" type="text" name="data[nome]">
             </div>
             
-          <div align="center">
+          <div align="center" class="stretch padding5px">
               <label>Email:</label> 
-              <input type="email" name="data[email]">
+              <input class="stretch-ctnt" type="email" name="data[email]">
           </div>
             
-          <div align="center">
-              <label>Data de nascimento:</label> 
-              <input type="date" name="data[data_nascimento]">
+          <div align="center" class="stretch padding5px">
+              <label align="start">Data de nascimento:</label> 
+              <input class="stretch-ctnt" type="date" name="data[data_nascimento]">
           </div>
               
-          <div align="center">
+          <div align="center" class="stretch padding5px">
               <label>Telefone:</label> 
-              <input type="number" name="data[telefone]" placeholder="(XX) XXXX-XXXX">
+              <input class="stretch-ctnt" type="number" name="data[telefone]" placeholder="(XX) XXXX-XXXX">
           </div>
             
           <div align="center">
