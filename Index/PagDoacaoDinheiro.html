@@ -15,18 +15,19 @@
 
 
 
-<header>
-    
+<header>  
     <nav>
         <div>
-            <img src="./templates/images/logo.png" alt="logo revirar" class="logo">
+            <a href="./PagIncial.html">
+                <img src="./templates/images/logo.png" alt="logo revirar" class="logo">
+            </a>
         </div>
         <input type="checkbox" id="click">
         <label for="click" class="menu-btn"><i class="fas fa-bars"></i></label>
         <ul>
-            <li><a href="./PagIncial.html">início</a></li>
+            <li><a class="navLink" href="./PagIncial.html">início</a></li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuItem" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="navLink nav-link dropdown-toggle" href="#" id="navbarDropdownMenuItem" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   O Revirar
                 </a>
                 <div class="dropdown-content" aria-labelledby="navbarDropdownMenuItem">
@@ -36,7 +37,7 @@
                 </div>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuItem" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="navLink nav-link dropdown-toggle" href="#" id="navbarDropdownMenuItem" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Apoie
                 </a>
                 <div class="dropdown-content" aria-labelledby="navbarDropdownMenuItem">
@@ -45,9 +46,14 @@
                   <a class="dropdown-item" href="./PagTiposDoação.html">Ser doador</a>
                 </div>
               </li>
-            <li><a href="#">blog</a></li>
+            <li><a  class="navLink" href="#">blog</a></li>
            
-            <li><button><a href="./PagDoacaoDinheiro.html">Doe Agora</a></button></li>
+            <li>
+                <a href="./PagDoacaoDinheiro.html">
+                    <button>Doe Agora</button>
+                </a>
+                
+            </li>
             <li>
                 
             </li>
@@ -58,25 +64,31 @@
 <body>
 
     <div class="imgTxt2">
-        
-        <div class="pargphStart">
+      <div class="pargphStart centerList">
+          <div><br><br></div>
             <h2 class="ttl1">Desejo fazer uma doação em dinheiro!</h2>
             <p class="txt1">Queremos lhe conhecer melhor, deixe suas informações caso se sinta confortável!</p>
-            <div>
+            <div class="formulario slim">
+              <div class="stretch">
                 <label>Nome: </label>
-                <input type="text"> 
+                <input class="stretch-ctnt" type="text"> 
                 <br>
-                
+              </div>
+              <div class="stretch">
                 <label>Email: </label>
-                <input type="email"> 
+                <input class="stretch-ctnt" type="email"> 
                 <br>
-                
+              </div>
+              <div class="stretch">
                 <label>Celular: </label>
-                <input type="phone"> 
+                <input class="stretch-ctnt" type="phone"> 
                 <br>
+              </div>
+        
                 <br>
                 <br>
 
+            </div>
                 <button type="button"  data-toggle="modal" data-target="#modalExemplo">Enviar</button>
                   
                   <!-- Modal -->
@@ -93,7 +105,6 @@
                     </div>
                   </div>
                 
-            </div>
         </div>
 
         <div>
