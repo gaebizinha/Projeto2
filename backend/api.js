@@ -7,10 +7,12 @@ const hostname = '127.0.0.1';
 /* Servidor do Banco de Dados */
 const portback = 3061;
 const sqlite3 = require('sqlite3').verbose();
+const cors = require('cors')
 const server = express();
 const DBPATH = 'revirarDB.db';
 server.use(express.static("../Index"));
 server.use(express.json());
+server.use(cors())
 
 
 /* Definição dos endpoints */
