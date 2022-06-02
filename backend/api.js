@@ -71,7 +71,7 @@ server.delete('/excluiusuario', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
-    sql = "DELETE FROM doacao WHERE tlt_doacao = '" + req.body.nome + "'"; 
+    sql = "DELETE FROM acolhido WHERE nm_nome = '" + req.body.nm_nome + "'"; 
     var db = new sqlite3.Database(DBPATH); // Abre o banco
     db.run(sql, [],  err => {
         if (err) {
