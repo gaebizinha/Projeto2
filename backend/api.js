@@ -37,7 +37,7 @@ server.post('/userinsert', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
-	sql = "INSERT INTO acolhido (id_atendido, nm_nome) VALUES ('" + req.body.userId + "','"+ req.body.nm_nome +"' )";
+	sql = "INSERT INTO acolhido (nm_nome, dt_nascimento, nr_cpf, nr_rg, in_locais, ds_locais, ds_albergue, ds_domiciliopart, qt_rua, qt_albergue, qt_domicilio, qt_morarua, st_familia, ds_comunitarias, ds_atendido, st_carteiratrab, ds_renda, ds_progrenda, ds_programarenda) VALUES ('"+ req.body.nm_nome +"','" + req.body.data +"', '" + req.body.cpf +"','"+req.body.rg+"','"+ req.body.in_locais +"', '"+ req.body.ds_locais + "', '"+ req.body.albuergue+"', '"+ req.body.ds_domiciliop +"', '"+req.body.qt_r+"','"+req.body.qt_albuergue+"','"+req.body.qt_dom+"','"+req.body.qt_rua+"', '"+req.body.st_f+"', '"+req.body.ds_com+"', '"+req.body.ds_at+"','"+req.body.st_cattrab+"', '"+req.body.ds_renda+"','"+req.body.ds_progren+"','"+req.body.programar+"')";
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.run(sql, [],  err => {
 		if (err) {
@@ -54,7 +54,7 @@ server.patch('/editarUsuarios', urlencodedParser, (req, res) => {
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
 	console.log("req:");
-	sql = "UPDATE acolhido SET nm_nome = '" + req.body.title + "' WHERE id_atendido = " + req.body.userId;
+	sql = "UPDATE acolhido SET nm_nome = '" + req.body.nm_nome + "', dt_nascimento = '"+req.body.dt_nas+"', nr_cpf = '"+req.body.nr_cpf+"', nr_rg = '"+req.body.nr_rg+"', in_locais = '"+req.body.in_locais+"', in_locais = '"+req.body.ds_locais+"',  ds_albergue = '"+req.body.ds_albergue+"', ds_domiciliopart = '"+req.body.ds_domiciliop+"', qt_rua = '"+req.body.qt_rua+"', qt_albergue = '"+req.body.qt_albuergue+"',  qt_domicilio = '"+req.body.qt_domicilio+"', qt_morarua = '"+req.body.qt_morarua+"', st_familia = '"+req.body.st_familia+"', ds_comunitarias = '"+req.body.ds_comunitarias+"', ds_atendido = '"+req.body.ds_atendido+"', st_carteiratrab = '"+req.body.st_cattrab+"', ds_renda = '"+req.body.ds_renda+"', ds_progrenda  = '"+req.body.ds_progrenda+"', ds_programarenda = '"+req.body.programarenda+"' WHERE id_atendido = " + req.body.userId;
 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.run(sql, [],  err => {
@@ -64,6 +64,20 @@ server.patch('/editarUsuarios', urlencodedParser, (req, res) => {
 		res.end();
 	});
 	db.close(); // Fecha o banco
+});
+server.delete('/excluiusuario', urlencodedParser, (req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+    sql = "DELETE FROM doacao WHERE tlt_doacao = '" + req.body.nome + "'"; 
+    var db = new sqlite3.Database(DBPATH); // Abre o banco
+    db.run(sql, [],  err => {
+        if (err) {
+            throw err;
+        }
+        res.end();
+    });
+    db.close(); // Fecha o banco
 });
 
 //Gabi------------------------------------------------------------------------------------------------------------------//
