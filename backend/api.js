@@ -268,3 +268,50 @@ server.delete('/excluiAtendimento', urlencodedParser, (req, res) => {
     });
     db.close(); // Fecha o banco
 });
+
+
+//Lugares----------------------------------------------------------------------------------//
+
+
+// Retorna todos registros (é o C do CRUD - Create)
+server.post('/cadastraLugar', urlencodedParser, (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+	var sql = "INSERT INTO lugares (lat, long, dt_visita) VALUES ('" + req.body.lat + "','"+ req.body.long +"', '"+ req.body.dt_visita +"' )";
+	db.all(sql, [],  (err, rows ) => {
+		if (err) {
+		    throw err;
+		}
+		res.json(rows);
+	});
+	db.close(); // Fecha o banco
+});
+// Consulta um registro (é R do CRUD - Read)
+server.get('/visualizaLugar', (req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+    var db = new sqlite3.Database(DBPATH); // Abre o banco
+  var sql = 'SELECT * FROM lugares';
+    db.all(sql, [],  (err, rows ) => {
+        if (err) {
+            throw err;
+        }
+        res.json(rows);
+    });
+    db.close(); // Fecha o banco
+});
+// Retorna todos registros (é o C do CRUD - Create)
+server.delete('/excluiLugar', urlencodedParser, (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+	var sql = "DELETE FROM lugares WHERE dt_visita = '"+ req.body.dt_visita+"'";
+	db.all(sql, [],  (err, rows ) => {
+		if (err) {
+		    throw err;
+		}
+		res.json(rows);
+	});
+	db.close(); // Fecha o banco
+});
