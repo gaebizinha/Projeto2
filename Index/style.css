@@ -351,6 +351,10 @@ input{
     float: none;
 }
 
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 .dropdown-item {
     color: #767676;
 }
@@ -391,10 +395,6 @@ input{
     .Img2 {
         line-height: 35vh;
         width: 50vw;
-    }
-
-    .Img4 {
-        width: 60% !important;
     }
 
     #map {
@@ -528,7 +528,6 @@ input{
     }
     .imgsr{
         width: 40vw;
-        padding-right: 3%;
     }
     #ods{
         width: 100%;
@@ -570,11 +569,6 @@ input{
         transition: all 0.3s ease;
         position: absolute;
     }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
     .inputlarge { 
         line-height: 24px;
         margin: 0 !important;
@@ -772,11 +766,6 @@ input{
     .dropdown-content a {
         padding: 10px;
     }
-    
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-    
     .inputlarge { 
         line-height: 24px;
         margin: 0 !important;

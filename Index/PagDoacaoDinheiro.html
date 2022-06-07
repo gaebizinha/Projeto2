@@ -1,23 +1,65 @@
 <!DOCTYPE html>
 <div lang="en">
     <head>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-      <link rel="stylesheet" href="./style.css">
-      <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-      <script src="./script.js"></script>
-      <script src="https://kit.fontawesome.com/1fddcbf50b.js" crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
-      <meta charset="UTF-8">
-      <link rel="icon" href="./images/logo.png">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Revirar: Doação em dinheiro</title>
+        <link rel="icon" href="./images/logo.png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="./style.css">
+        <script src="https://kit.fontawesome.com/1fddcbf50b.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+        <meta charset="UTF-8">
+        <script src="./script.js"></script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Revirar: Doação em dinheiro</title>
     </head>
 
 
 
-<header id="header"></header>
+<header>  
+    <nav>
+        <div>
+            <a href="./PagIncial.html">
+                <img src="./templates/images/logo.png" alt="logo revirar" class="logo">
+            </a>
+        </div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn"><i class="fas fa-bars"></i></label>
+        <ul>
+            <li><a class="navLink" href="./PagIncial.html">início</a></li>
+            <li class="nav-item dropdown">
+                <a class="navLink nav-link dropdown-toggle" href="#" id="navbarDropdownMenuItem" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  O Revirar
+                </a>
+                <div class="dropdown-content" aria-labelledby="navbarDropdownMenuItem">
+                  <a class="dropdown-item" href="./PagSobre.html">Sobre o revirar</a>
+                  <a class="dropdown-item" href="./PagComoAtua.html">Como atuamos</a>
+                  <a class="dropdown-item" href="./PagImpacto.html">Impacto</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="navLink nav-link dropdown-toggle" href="#" id="navbarDropdownMenuItem" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Apoie
+                </a>
+                <div class="dropdown-content" aria-labelledby="navbarDropdownMenuItem">
+                  <a class="dropdown-item" href="./PagComoApoiar.html">Como apoiar</a>
+                  <a class="dropdown-item" href="./PagSerVoluntario.html">Ser voluntário</a>
+                  <a class="dropdown-item" href="./PagTiposDoação.html">Ser doador</a>
+                </div>
+              </li>
+            <li><a  class="navLink" href="#">blog</a></li>
+           
+            <li>
+                <a href="./PagDoacaoDinheiro.html">
+                    <button>Doe Agora</button>
+                </a>
+                
+            </li>
+            <li>
+                
+            </li>
+        </ul>
+    </nav> 
+</header>
 
 <body>
 
@@ -84,8 +126,22 @@
     
 
 
-    <footer id="footer"></footer>
+    <footer>
+      <div>
+          <h2 class="ttl1">Redes Sociais</h2>
+          <ul>
+              <a href="#"><i class="fa fa-instagram"></i></a>
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-youtube"></i></a>
+          </ul>
+          <p align="center" class="txt1"><i class="fa-solid fa-lock"></i><a href="./LoginAreaPriv.html">  Área privada</a></p>
+          
+      </div>
+    
+      <img src="./templates/images/logo.png" alt="" class="">
+    </footer>
   
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
