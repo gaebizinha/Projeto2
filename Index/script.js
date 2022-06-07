@@ -46,6 +46,12 @@ var user = {
         var rg = parseInt(document.querySelector("#rg").value);
         var ds_locais = document.querySelector("#ds_locais").value;
         var apl = document.querySelector("#apelido").value;
+        var locaisOndeFica = document.querySelector("#locais_e").value;
+        var alb_abr = document.querySelector("#al_ab").value;
+        var domiciP = document.querySelector("#domP").value;
+        var qt_ruaS = document.querySelector("#qt_ruaSem").value;
+        var qt_alb = document.querySelector("#qt_albSem").value;
+        var qt_domPart = document.querySelector("#qt_domP").value;
 
     
 
