@@ -8,6 +8,7 @@ api = 'http://127.0.0.1:3061'
 
 $(document).ready(() => {
     users.list();
+    blog.postagem();
 });
 
 
@@ -73,5 +74,29 @@ var user = {
     },
 }
 
-
+var blog = {
+    
+    postagem() {
+        $.ajax({
+            url: api + '/vePostagem',
+            type: 'GET',
+            success: data => {
+                var tx = '';
+                tx += '<div class="centerList">';
+                data.forEach(element => {
+                    tx += '<div class="card slim">';
+                        tx += '<h2 class="ttl2">' + element.tlt_post + '</h2>';
+                        tx += '<p class="txt1">' + element.dt_post + '</p>';
+                        tx += '<p class="txt1">' + element.txt_post + '</p>';
+                        tx += '<div class="actions">';
+                        tx += '</div>';
+                    tx += '</div>';
+                });
+                $('#blog').html(tx);
+            }
+        });
+        
+    }
+    
+};
 
