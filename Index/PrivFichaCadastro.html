@@ -104,8 +104,8 @@
         <label>Preencha com o número de dias da semana que o atendido passa nos seguintes locais: </label>
         <div class="centerList">
             <label>Rua: </label>
-            <select class="inputlarge">
-                <option selected disabled id="qt_ruaSem">Selecione</option>
+            <select class="inputlarge" id="qt_ruaSem">
+                <option selected disabled >Selecione</option>
                 <option>0 dias</option>
                 <option>1 dia</option>
                 <option>2 dias</option>
@@ -118,8 +118,8 @@
             <br>
 
             <label>Albergue: </label>
-            <select class="inputlarge">
-                <option selected disabled id="qt_albSem">Selecione</option>
+            <select class="inputlarge" id="qt_albSem">
+                <option selected disabled >Selecione</option>
                 <option>0 dias</option>
                 <option>1 dia</option>
                 <option>2 dias</option>
@@ -132,8 +132,8 @@
             <br>
 
             <label>Domicílio particular: </label>
-            <select class="inputlarge">
-                <option selected disabled id="qt_domP">Selecione</option>
+            <select class="inputlarge" id="qt_domP">
+                <option selected disabled >Selecione</option>
                 <option>0 dias</option>
                 <option>1 dia</option>
                 <option>2 dias</option>
@@ -158,7 +158,7 @@
     <div align="center">
         <div class="centerList">
             <label>A quanto tempo vive na rua: </label>
-            <select class="inputlarge">
+            <select class="inputlarge" id="tempoRua">
                 <option selected disabled>Selecione</option>
                 <option>Até 6 meses</option>
                 <option>Entre 6 meses e 1 ano</option>
@@ -170,11 +170,11 @@
             <br>
 
             <label>Motivo que começou a morar na rua: </label>
-            <input class="busca inputlarge" type="text"></input>
+            <input class="busca inputlarge" type="text" id="motivoRua"></input>
             <br>
 
             <label>A quanto tempo vive nessa cidade: </label>
-            <select class="inputlarge">
+            <select class="inputlarge" id="qtCidade">
                 <option selected disabled>Selecione</option>
                 <option>Até 6 meses</option>
                 <option>Entre 6 meses e 1 ano</option>
@@ -186,7 +186,7 @@
             <br>
             
             <label>Familia vive na rua: </label>
-            <select class="inputlarge">
+            <select class="inputlarge" id="famVRua">
                 <option selected disabled>Selecione</option>
                 <option>Sim</option>
                 <option>Não</option>
@@ -196,7 +196,7 @@
             
 
             <label>Nos últimos seis meses frequentou ou participou de alguma atividade comunitária: </label>
-            <select class="inputlarge">
+            <select class="inputlarge" id="atvComutarias7dias">
                 <option selected disabled>Selecione</option>
                 <option>Escola</option>
                 <option>Movimento social</option>
@@ -209,7 +209,7 @@
             <br>
 
             <label>Nos últimos seis meses foi atendido em algum dos lugares abaixo: </label>
-            <select class="inputlarge">
+            <select class="inputlarge" id="lugares6M">
                 <option selected disabled>Selecione</option>
                 <option>Nenhum</option>
                 <option>Centro de Referência de Assistência Social (CRAS)</option>
@@ -223,7 +223,7 @@
             <br>
 
             <label>Já teve carteira de trabalho assinada: </label>
-            <select class="inputlarge">
+            <select class="inputlarge" id="cartTra">
                 <option selected disabled>Selecione</option>
                 <option>Nenhum</option>
                 <option>Sim</option>
@@ -233,7 +233,7 @@
             <br>
 
             <label>O que faz para ganhar dinheiro: </label>
-            <select class="inputlarge">
+            <select class="inputlarge" id="oqFazDinheiro">
                 <option selected disabled>Selecione</option>
                 <option>Catador de material reciclável</option>
                 <option>Carregador/estivador</option>
@@ -247,7 +247,7 @@
             <br>
 
             <label>Está inserido em algum programa de renda? </label>
-            <select class="inputlarge">
+            <select class="inputlarge" id="progRenda">
                 <option selected disabled>Selecione</option>
                 <option>Nenhum</option>
                 <option>Sim</option>
@@ -255,11 +255,12 @@
                 
             </select>
             <label>Se sim, qual: </label>
-            <input class="busca inputlarge" type="text"></input>
+            <input class="busca inputlarge" type="text" id="qProgRenda"></input>
 
 
             <br>
 
+            
             
 
     </div>
