@@ -53,6 +53,15 @@ var user = {
         var qt_ruaS = document.querySelector("#qt_ruaSem").value;
         var qt_alb = document.querySelector("#qt_albSem").value;
         var qt_domPart = document.querySelector("#qt_domP").value;
+        var tempR = document.querySelector("tempoRua").value;
+        var motivoR = document.querySelector("#motivoRua").value;
+        var qt_Cid = document.querySelector("#qtCidade").value;
+        var FamRua = document.querySelector("#famVRua").value;
+        var atvCom7 = document.querySelector("#atvComutarias7dias").value;
+        var UltLugares6 = document.querySelector("#lugares6M").value;
+        var cTrabalho = document.querySelector("#cartTrab").value;
+        var fazDinheiro = document.querySelector("#oqFazDinheiro").value;
+        var pRenda = document.querySelector("#progRenda").value;
 
     
 
