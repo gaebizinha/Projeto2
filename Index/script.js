@@ -54,6 +54,7 @@ var user = {
         var qt_ruaS = document.querySelector("#qt_ruaSem").value;
         var qt_alb = document.querySelector("#qt_albSem").value;
         var qt_domPart = document.querySelector("#qt_domP").value;
+        console.log(cpf)
 
     
 
