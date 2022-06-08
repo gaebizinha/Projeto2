@@ -58,23 +58,32 @@ var users = {
     }
     
 };
-
-
 var user = {
 
     insert() {
         var nome = document.querySelector("#nome").value;
+        var apl = document.querySelector("#apelido").value;
         var dataN = document.querySelector("#dataN").value;
         var cpf = parseInt(document.querySelector("#cpf").value);
         var rg = parseInt(document.querySelector("#rg").value);
-        var ds_locais = document.querySelector("#ds_locais").value;
-        var apl = document.querySelector("#apelido").value;
-        var locaisOndeFica = document.querySelector("#locais_e").value;
+        var in_loc = document.querySelector("#locais_e").value;
+        var ds_l = document.querySelector("#ds_locais").value;
         var alb_abr = document.querySelector("#al_ab").value;
         var domiciP = document.querySelector("#domP").value;
+        var locaisOndeFica = document.querySelector("#locais_e").value;
         var qt_ruaS = document.querySelector("#qt_ruaSem").value;
         var qt_alb = document.querySelector("#qt_albSem").value;
         var qt_domPart = document.querySelector("#qt_domP").value;
+        var tDRua = document.querySelector("#tempoRua").value;
+        var moRua = document.querySelector("#motivoRua").value;
+        var TemC = document.querySelector("#qtCidade").value;
+        var fVRua = document.querySelector("#famVRua").value;
+        var dsC = document.querySelector("#atvComutarias7dias").value;
+        var atdLug = document.querySelector("#lugares6M").value;
+        var cTrab = document.querySelector("#cartTra").value;
+        var FazDinheiro = document.querySelector("#oqFazDinheiro").value;
+        var ProgRen = document.querySelector("#progRenda").value;
+        var qProgRe = document.querySelector("#qProgRenda").value;
         console.log(cpf)
 
     
@@ -84,7 +93,8 @@ var user = {
                 $.ajax({
                     type: 'POST',
                     url: api + '/userinsert',
-                    data: {nm_nome: nome, dt_nas: dataN, nr_cpf: cpf, nr_rg: rg, ds_locais: ds_locais},
+                    data: {nm_nome: nome, dt_nas: dataN, nr_cpf: cpf, nr_rg: rg,
+                    in_locais: in_loc, ds_locais: ds_l, albuergue: alb_abr, ds_domiciliop: domiciP, qt_r: qt_ruaS, qt_albuergue: qt_alb, qt_dom: qt_domPart, qt_rua: tDRua, motRua: moRua, tCid: TemC, st_f: fVRua, ds_com: dsC, ds_at:atdLug, st_cattrab: cTrab, ds_renda: FazDinheiro, ds_progren: ProgRen, programar: qProgRenda  },
                 }).done(function () {
                     users.list();
                 }).fail(function (msg) {
@@ -96,6 +106,8 @@ var user = {
         }
     },
 }
+
+
 
 var blog = {
     
