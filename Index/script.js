@@ -3,6 +3,25 @@ window.addEventListener("scroll", function(){
     img.classList.toggle("sticky", window.scrollY > 0)  
 })  
 
+$(function(){ 
+
+    $("#filtro").keyup(function(){
+      var texto = $(this).val();
+      
+      $(".bloco").each(function(){
+        var resultado = $(this).text().toUpperCase().indexOf(' '+texto.toUpperCase());
+        
+        if(resultado < 0) {
+          $(this).fadeOut();
+        }else {
+          $(this).fadeIn();
+        }
+      }); 
+  
+    });
+  
+  });
+
 api = 'http://127.0.0.1:3061'
 
 
@@ -24,7 +43,7 @@ var users = {
                 var tx = '';
                 tx += '<div class="centerList">';
                 data.forEach(element => {
-                    tx += '<div class="card slim">';
+                    tx += '<div class="card slim bloco">';
                         tx += '<h2 class="ttl2">' + element.nm_nome + '</h2>';
                         tx += '<p class="txt1">' + element.dt_nascimento + '</p>';
                         tx += '<div class="actions">';
