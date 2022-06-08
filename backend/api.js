@@ -230,7 +230,7 @@ server.post('/criaAtendimento', urlencodedParser, (req, res) => {// inicia a fun
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
-	sql = "INSERT INTO atendimentos (id_atendido, qt_presenca, id_toalha, nr_lanches, qt_banho) VALUES ('" + req.body.id_atendido + "','"+ req.body.qt_presenca + "','"+ req.body.id_toalha +"', '"+ req.body.nr_lanches+"', '"+ req.body.qt_banho+"')"; // insere um valor no banco de dados (só está sendo passado o id, porque ele é obrigatorio)
+	sql = "INSERT INTO atendimentos (id_atendido, id_toalha, nr_lanches, qt_banho, dt_atendimento, dt_horario, qt_bazar, nm_nome, atividades) VALUES ('" + req.body.id_atendido + "','"+ req.body.id_toalha + "','"+ req.body.nr_lanches +"', '"+ req.body.qt_banho+"', '"+ req.body.dt_atendimento+"', '"+ req.body.dt_horario+"', '"+ req.body.qt_bazar+"', '"+ req.body.nm_nome+"', '"+ req.body.atividades+"')"; // insere um valor no banco de dados (só está sendo passado o id, porque ele é obrigatorio)
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.run(sql, [],  err => {
 		if (err) {

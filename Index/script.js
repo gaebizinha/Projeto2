@@ -30,6 +30,7 @@ $(document).ready(() => {
     blog.postagem();
     blogposts.postagens();
     lugaresvisitados.visita();
+    atendimentos.tabela();
 });
 
 
@@ -204,3 +205,24 @@ var lugaresvisitados = {
     }
     
 };
+
+var atendimentos = {
+    
+    tabela() {
+        $.ajax({
+            url: api + '/visualizaAtendimentos',
+            type: 'GET',
+            success: data => {
+                var tx = '';
+                data.forEach(element => {
+                    tx += '<tr><td>' + element.id_atendido + '</td><td>' + element.nm_nome + '</td><td>' + element.dt_atendimento + ' </td><td>' + element.dt_horario + '</td><td>' + element.nr_lanches + '</td><td>' + element.atividades + '</td><td>' + element.qt_banho + '</td><td>' + element.id_toalha + '</td><td>' + element.qt_bazar + '</td></tr>'
+                });
+                $('#tbody').html(tx);
+            }
+        });
+        
+    }
+    
+};
+
+
