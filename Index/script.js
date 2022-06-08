@@ -169,7 +169,7 @@ var lugaresvisitados = {
                 tx += '<div class="centerList">';
                 data.forEach(element => {
                     tx += '<div class="card slim">';
-                        tx += '<h2 class="ttl2">' + element.nm_rua + ',' + element.bairro + '</h2>';
+                        tx += '<h2 class="ttl2">' + element.nm_rua + ', ' + element.bairro + '</h2>';
                         tx += '<p class="txt1">' + element.dt_visita + '</p>';
                         tx += '<p class="txt1">Ponto de referencia: ' + element.nm_referencia + '</p>';
                         tx += '<p class="txt1">Número de assistidos encontrados:' + element.nr_pessoas + '</p>';
