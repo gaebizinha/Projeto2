@@ -10,6 +10,7 @@ $(document).ready(() => {
     users.list();
     blog.postagem();
     blogposts.postagens();
+    lugaresvisitados.visita();
 });
 
 
@@ -157,3 +158,30 @@ var subirPost = { //Colocar no onClick
     },
 }
 
+var lugaresvisitados = {
+    
+    visita() {
+        $.ajax({
+            url: api + '/visualizaLugar',
+            type: 'GET',
+            success: data => {
+                var tx = '';
+                tx += '<div class="centerList">';
+                data.forEach(element => {
+                    tx += '<div class="card slim">';
+                        tx += '<h2 class="ttl2">' + element.nm_rua + ',' + element.bairro + '</h2>';
+                        tx += '<p class="txt1">' + element.dt_visita + '</p>';
+                        tx += '<p class="txt1">Ponto de referencia: ' + element.nm_referencia + '</p>';
+                        tx += '<p class="txt1">Número de assistidos encontrados:' + element.nr_pessoas + '</p>';
+                        
+                        tx += '<div class="actions">';
+                        tx += '</div>';
+                    tx += '</div>';
+                });
+                $('#lugaresvisitados').html(tx);
+            }
+        });
+        
+    }
+    
+};
