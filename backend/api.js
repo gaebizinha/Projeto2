@@ -280,7 +280,7 @@ server.post('/cadastraLugar', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-	var sql = "INSERT INTO lugares (lat, long, dt_visita) VALUES ('" + req.body.lat + "','"+ req.body.long +"', '"+ req.body.dt_visita +"' )";
+	var sql = "INSERT INTO lugares (nm_rua, bairro, dt_visita, nm_referencia, nr_pessoas ) VALUES ('" + req.body.nm_rua + "','"+ req.body.bairro +"', '"+ req.body.dt_visita +"', '"+ req.body.nm_referencia +"', '"+ req.body.nr_pessoas +"' )"; 
 	db.all(sql, [],  (err, rows ) => {
 		if (err) {
 		    throw err;
@@ -308,7 +308,7 @@ server.delete('/excluiLugar', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-	var sql = "DELETE FROM lugares WHERE dt_visita = '"+ req.body.dt_visita+"'";
+	var sql = "DELETE FROM lugares WHERE nm_rua = '"+ req.body.nm_rua+"'";
 	db.all(sql, [],  (err, rows ) => {
 		if (err) {
 		    throw err;
