@@ -94,7 +94,7 @@ var user = {
                     type: 'POST',
                     url: api + '/userinsert',
                     data: {nm_nome: nome, dt_nas: dataN, nr_cpf: cpf, nr_rg: rg,
-                    in_locais: in_loc, ds_locais: ds_l, albuergue: alb_abr, ds_domiciliop: domiciP, qt_r: qt_ruaS, qt_albuergue: qt_alb, qt_dom: qt_domPart, qt_rua: tDRua, moRua: moTRua, tempCid: TemC, st_f: fVRua, ds_com: dsC, ds_at:atdLug, st_cattrab: cTrab, ds_renda: FazDinheiro, ds_progren: ProgRen, programar: qProgRenda  },
+                    in_locais: in_loc, ds_locais: ds_l, albuergue: alb_abr, ds_domiciliop: domiciP, qt_r: qt_ruaS, qt_albuergue: qt_alb, qt_dom: qt_domPart, qt_rua: tDRua, moRua: moTRua, tempCid: TemC, st_f: fVRua, ds_com: dsC, ds_at: atdLug, st_cattrab: cTrab, ds_renda: FazDinheiro, ds_progren: ProgRen, programar: qProgRe},
                 }).done(function () {
                     users.list();
                 }).fail(function (msg) {
