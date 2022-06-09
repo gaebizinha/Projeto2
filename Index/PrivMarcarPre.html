@@ -5,80 +5,91 @@
     <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="./style.css">
-        <script src="./script.js"></script>
         <script src="https://kit.fontawesome.com/1fddcbf50b.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
         <meta charset="UTF-8">
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
         <link rel="icon" href="./images/logo.png">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Revirar: Presença</title>
+        <title>Revirar: Cadastro</title>
     </head>
 
     <header>
         <nav>
             <div>
+                <a href="./PagIncial.html">
                     <img src="./templates/images/logo.png" alt="logo revirar" class="logo">
+                </a>
             </div>
         </nav>
     </header>
 
 <body>
-
-    <div class="closesec">     
-        <a href="./PrivFreqPre.html">
-        <button class="smBtn">
-        <i class="fa-solid fa-xmark"></i>
-        </button>
-        </a>   
-    </div>
-
     <br>
     <br>
     <br class="lg-screen">
     <br class="lg-screen">
     <br class="lg-screen">
-    <div>
-        <h2 align="center"class=ttl1>Presença</h2>
-        
-    </div>
+    
 
-    <div align="center">
-        <h2 class=ttl2>Identificação</h2>
-        
+
+  
+    <h2 align="center"class=ttl1>Presença</h2>
 
     <div align="center">
         <div class="centerList">
+            
             <label>Nome: </label>
-            <input class="inputlarge" type="text"></input>
+            <input class="inputlarge" type="text" id="nm_nome">
+            <br>
+            <label>Número de registro: </label>
+            <input class="inputlarge" type="number" id="id_atendido">
             <br>
             <label>Data: </label>
-            <input class="busca inputlarge" type="date"></input>
+            <input class="busca inputlarge" type="date" id="data_at">
             <br>
             <label>Hora: </label>
-            <input class="busca inputlarge" type="time"></input>
+            <input class="busca inputlarge" type="time" id="hora_at">
             <br>
             <label>Número de Lanches: </label>
-            <input class="busca inputlarge" type="number"></input>
+            <input class="busca inputlarge" type="number" id="nr_lanches">
             <br>
             <label>Participou de Atividade: </label>
-            <input class="busca inputlarge" type="radio">sim</input>
+            <select class="inputlarge" id="ativ">
+                <option selected disabled>Selecione</option>
+                <option value="Sim">Sim</option>
+                <option value="Não">Não</option>
+            </select>
             <br>
             <label>Número de banhos: </label>
-            <input class="busca inputlarge" type="number"></input>
+            <input class="busca inputlarge" type="number" id="qt_banho">
             <br>
             <label>Número de toalhas: </label>
-            <input class="busca inputlarge" type="number"></input>
+            <input class="busca inputlarge" type="number" id="id_toalha">
             <br>
             <label>Roupas Bazar: </label>
-            <input class="busca inputlarge" type="text" placeholder="Quais roupas e quantas foram pegas?"></input>
+            <input class="busca inputlarge" type="text" placeholder="Quais roupas e quantas foram pegas?" id="qt_bazar">
             <br>
-            <button>SALVAR</button>
+            <button onclick="novoAtendimento.insert()">Salvar</button>
         </div>
     </div>
 
+
+    
+    <div><br></div>
+
+    <hr>
+    
+    <div>
+        <br>
+        <br>
+    </div>
+    </div>
     
     
     
 </body>
+<script src="./script.js"></script>
+
 </html>
