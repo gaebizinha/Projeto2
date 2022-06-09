@@ -14,6 +14,7 @@ $(document).ready(() => {
     lugaresvisitados.visita();
     atendimentos.tabela();
     doadores.dados();
+    VoluntarioPriv.cadastroV();
 });
 
 
@@ -302,7 +303,51 @@ var novosdoadores = { //Colocar no onClick
     },
 }
 
+var VoluntarioPriv = {
+    
+    cadastroV() {
+        $.ajax({
+            url: api + '/visualizaVoluntario',
+            type: 'GET',
+            success: data => {
+                var tx = '';
+                data.forEach(element => {
+                    tx += '<tr><td>' + element.voluntario + '</td><td>' + element.nm_email + '</td><td>' + element.dt_idade + ' </td><td>' + element.nr_tel + ' </td><td>' + element.dr_ajuda +  '</td></tr>'
+                });
+                $('#Vbody').html(tx);
+            }
+        });
+        
+    }
+    
+};
 
+var cadastroVoluntario = { //Colocar no onClick
+
+    insert() {
+        var voluntario = document.querySelector("#voluntario").value;
+        var nm_email = document.querySelector('#nm_email').value;
+        var dt_idade = document.querySelector('#dt_idade').value;
+        var nr_tel = document.querySelector('#nr_tel').value;
+        var dr_ajuda = document.querySelector('#dr_ajuda').value;
+
+        if (voluntario) {
+            if (voluntario.trim() != '') {
+                $.ajax({
+                    type: 'POST',
+                    url: api + '/cadastraVoluntario',
+                    data: {voluntario: voluntario,nm_email: nm_email,dt_idade: dt_idade,nr_tel: nr_tel,dr_ajuda: dr_ajuda}
+                }).done(function () {
+                    voluntarioPriv.cadastroV();
+                }).fail(function (msg) {
+                    //console.log('FAIL');
+                }).always(function (msg) {
+                    //console.log('ALWAYS');
+                });
+            }
+        }
+    },
+}
 
 
 

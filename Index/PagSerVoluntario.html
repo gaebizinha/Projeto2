@@ -62,7 +62,6 @@
   </header>
 
 <body>
-  
   <div>
     <h2 align="center" id="txtvl" class="ttl1">Ser voluntário</h2>
   </div>
@@ -87,38 +86,38 @@
         
         <h2 align="center" class="ttl2">Quero ser voluntário de Revirar!</h2>
           
-
+  
   
   
           <div class="formulario">
             <div align="center" class="stretch padding5px">
               <label>Nome: </label>
-              <input class="stretch-ctnt" type="text" >
+              <input class="stretch-ctnt" type="text" id="voluntario" >
             </div>
             
           <div align="center" class="stretch padding5px">
               <label>Email:</label> 
-              <input class="stretch-ctnt" type="email" >
+              <input class="stretch-ctnt" type="email" id="nm_email">
           </div>
             
           <div align="center" class="stretch padding5px">
               <label align="start">Data de nascimento:</label> 
-              <input class="stretch-ctnt" type="date" >
+              <input class="stretch-ctnt" type="date" id="dt_idade">
           </div>
               
           <div align="center" class="stretch padding5px">
               <label>Telefone:</label> 
-              <input class="stretch-ctnt" type="number"  placeholder="(XX) XXXX-XXXX">
+              <input class="stretch-ctnt" type="number"  placeholder="(XX) XXXX-XXXX" id="nr_tel">
           </div>
             
           <div align="center">
               <label>Com o que você gostaria de ajudar:</label><br>
-              <input type="text" >
+              <input type="text" id="dr_ajuda">
               <br>
               <br>
             
             <div align="center"> 
-              <button>
+              <button onclick="cadastroVoluntario.insert()">
                 Enviar
               </button>
             </div>
@@ -137,6 +136,7 @@
   </div>
     
   </div>
+    
     
     
     
