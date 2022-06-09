@@ -84,9 +84,11 @@ var user = {
         var FazDinheiro = document.querySelector("#oqFazDinheiro").value;
         var ProgRen = document.querySelector("#progRenda").value;
         var qProgRe = document.querySelector("#qProgRenda").value;
+        var dtS1 = parseInt(document.querySelector("#dtaServ1").value);
+        var ser1 = document.querySelector("#serv1").value;
+        var dtS2 = parseInt(document.querySelector("#dtServ2").value);
+        var ser2 = document.querySelector("#serv2").value;
         console.log(cpf)
-
-    
 
         if (nome) {
             if (nome.trim() != '') {
@@ -94,7 +96,7 @@ var user = {
                     type: 'POST',
                     url: api + '/userinsert',
                     data: {nm_nome: nome, dt_nas: dataN, nr_cpf: cpf, nr_rg: rg,
-                    in_locais: in_loc, ds_locais: ds_l, albuergue: alb_abr, ds_domiciliop: domiciP, qt_r: qt_ruaS, qt_albuergue: qt_alb, qt_dom: qt_domPart, qt_rua: tDRua, moRua: moTRua, tempCid: TemC, st_f: fVRua, ds_com: dsC, ds_at: atdLug, st_cattrab: cTrab, ds_renda: FazDinheiro, ds_progren: ProgRen, programar: qProgRe},
+                    in_locais: in_loc, ds_locais: ds_l, albuergue: alb_abr, ds_domiciliop: domiciP, qt_r: qt_ruaS, qt_albuergue: qt_alb, qt_dom: qt_domPart, qt_rua: tDRua, moRua: moTRua, tempCid: TemC, st_f: fVRua, ds_com: dsC, ds_at: atdLug, st_cattrab: cTrab, ds_renda: FazDinheiro, ds_progren: ProgRen, programar: qProgRe, dt_Serv1: dtS1, Serv1: ser1, dt_Serv2: dtS2, Serv2:ser2 },
                 }).done(function () {
                     users.list();
                 }).fail(function (msg) {
