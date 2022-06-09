@@ -3,6 +3,10 @@ window.addEventListener("scroll", function(){
     img.classList.toggle("sticky", window.scrollY > 0)  
 })  
 
+$(document).ready(function(){       
+    $("#header").load("NavBar.html")
+    $("#footer").load("Footer.html")
+});
 
 api = 'http://127.0.0.1:3061'
 
