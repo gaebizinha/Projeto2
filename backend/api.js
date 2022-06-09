@@ -317,3 +317,63 @@ server.delete('/excluiLugar', urlencodedParser, (req, res) => {
 	});
 	db.close(); // Fecha o banco
 });
+
+//Doadores-----------------------------------------------------------------//
+
+server.post('/cadastraDoador', urlencodedParser, (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+	var sql = "INSERT INTO doadores (nm_nomedoador, nm_email, nr_celular, dt_doacao ) VALUES ('" + req.nm_nomedoador + "','"+ req.body.nm_email +"', '"+ req.body.nr_celular +"', '"+ req.body.dt_doacao +"' )"; 
+	db.all(sql, [],  (err, rows ) => {
+		if (err) {
+		    throw err;
+		}
+		res.json(rows);
+	});
+	db.close(); // Fecha o banco
+});
+// Consulta um registro (é R do CRUD - Read)
+server.get('/visualizaDoacao', (req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+    var db = new sqlite3.Database(DBPATH); // Abre o banco
+  var sql = 'SELECT * FROM doadores';
+    db.all(sql, [],  (err, rows ) => {
+        if (err) {
+            throw err;
+        }
+        res.json(rows);
+    });
+    db.close(); // Fecha o banco
+});
+
+//Voluntarios-----------------------------------------------------------------//
+
+server.post('/cadastraVoluntario', urlencodedParser, (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+	var sql = "INSERT INTO voluntarios (voluntario, nm_email, dt_idade, nr_tel, dr_ajuda) VALUES ('" + req.voluntario + "','"+ req.body.nm_email +"', '"+ req.body.dt_idade +"', '"+ req.body.nr_tel +"', '"+ req.body.dr_ajuda +"' )"; 
+	db.all(sql, [],  (err, rows ) => {
+		if (err) {
+		    throw err;
+		}
+		res.json(rows);
+	});
+	db.close(); // Fecha o banco
+});
+// Consulta um registro (é R do CRUD - Read)
+server.get('/visualizaVoluntario', (req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+    var db = new sqlite3.Database(DBPATH); // Abre o banco
+  var sql = 'SELECT * FROM voluntarios';
+    db.all(sql, [],  (err, rows ) => {
+        if (err) {
+            throw err;
+        }
+        res.json(rows);
+    });
+    db.close(); // Fecha o banco
+});
