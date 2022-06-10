@@ -54,7 +54,7 @@ nav {
     padding: 0px 50px 0px 50px;
 }
 
-a {
+.noDec {
     text-decoration: none !important;
     color: inherit !important;
 }
@@ -74,6 +74,11 @@ img:hover {
 .logo:hover {
     transform: scale(1.1, 1.1);
     cursor: pointer;
+}
+
+.posSticky {
+    top: 13vh;
+    position: sticky;
 }
 
 nav ul {
@@ -400,7 +405,6 @@ button:hover {
 button:active {
     background-color: #393939;
     color: #FFF455;
-    width: 85%;
 }
 
 nav ul li button {
