@@ -7,25 +7,6 @@
 :target .untarget{
     display: none;
 }
-
-::-webkit-scrollbar {
-    width: 1vw;
-}
-
-::-webkit-scrollbar-track {
-    border-radius: 100vw;
-    background: #F9F9F9;
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(white, #FFF455, white);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(white, #FFF455, #FFF455, #FFF455, white);
-}
-
-
 * {
     margin: 0;
     padding: 0;
@@ -54,17 +35,9 @@ nav {
     padding: 0px 50px 0px 50px;
 }
 
-.noDec {
-    text-decoration: none !important;
-    color: inherit !important;
-}
-
-img {
-    transition: transform 0.5s ease;
-}
-
-img:hover {
-    transform: translateY(-4px);
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .logo {
@@ -76,77 +49,8 @@ img:hover {
     cursor: pointer;
 }
 
-.posSticky {
-    top: 13vh;
-    position: sticky;
-}
-
-nav ul {
-    position: fixed;
-    display: flex ;
-    flex-direction: column;
-    justify-content:space-between;
-    top: 80px;
-    right: -100%;
-    background-color: #F9F9F9;
-    padding-top: 10vh;
-    height: 100%;
-    transition: all 0.5s ease;
-}
-
-nav ul li {
-    display: inline-block;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav ul li a {
-    font-size: 20px;
-}
-
-nav ul li:hover {
-    text-decoration: none;
-    background:#ebebeb;
-    transition: 0.5s;
-    cursor: pointer;
-}
-
-nav ul li a:hover {
-    text-decoration: none;
-    color: #0F241D;
-    background:#ebebeb;
-}
-
-nav ul li a:active {
-    color: #A0A8A5;
-}
-
-nav .menu-btn i{
-    border-radius: 20%;
-    padding: 10px;
-    color:#A0A8A5;
-    font-size: 22px;
-    cursor: pointer;  
-    transition: all 0.5s ease;
-}
-
-nav .menu-btn i:hover{
-    background: rgba(160, 168, 165, 0.2);
-    color:black;
-}
-
-nav .menu-btn i:active{
-    background: rgba(160, 168, 165, 0.489);
-    color:#FFF455;
-    transition: color 0s;
-}
-
 #click {
     display: none;
-}
-
-#click:checked ~ ul {
-    right: 0%;
 }
 
 div.pargph {
@@ -270,11 +174,6 @@ div.centerList {
     padding: 20px;
 }
 
-.RLpadding10 {
-    padding-right: 10%;
-    padding-left: 10%;
-}
-
 div.card {
     border-radius: 10px;
     text-align: center;
@@ -308,6 +207,7 @@ div.card2:hover {
     justify-content: space-between;
     padding: 40px;
     padding-bottom: 0;
+
 }
 
 .card2 div {
@@ -367,10 +267,6 @@ div.card2:hover {
     padding: 50px 20px 30px 20px;
 }
 
-.navLink {
-    color: #767676;
-}
-
 nav ul li a {
     text-transform: uppercase;
     text-decoration: none;
@@ -400,11 +296,6 @@ button.marg {
 
 button:hover {
     transform: translate(0, -7px);
-}
-
-button:active {
-    background-color: #393939;
-    color: #FFF455;
 }
 
 nav ul li button {
@@ -438,11 +329,13 @@ input{
     border-radius:8px;
     border-color: #ebebeb;
 }
-
 .closesec{
     float:right;
-}
+    
+    padding-right: 5%;
+    padding-top: 3%;
 
+}
 .busca { 
     line-height: 24px;
     margin: 0 !important;
@@ -455,8 +348,11 @@ input{
 }
 
 .dropdown-content a {
-    clip-path: inset(0 0 100% 0);
-    transition: clip-path 0.5s ease;
+    float: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 .dropdown-item {
@@ -477,35 +373,8 @@ input{
     font-size: 5vw;
 }
 
-.entire {
-    height: 100% !important;
-    width: 100% !important;
-}
-
-.justSpcEvly {
-    justify-content: space-evenly !important;
-}
-
-.flexGrow {
-    flex-grow: 1;
-}
-
-.flexWrap {
-    flex-wrap: wrap ;
-}
-
-.wordBreak {
-    word-break: break-word;
-}
-
 
 @media (min-width: 900px) {
-
-    .closesec{
-        padding-right: 5%;
-        padding-top: 3%;
-    }
-
     .sm-screen {
         display: none;
     }
@@ -526,10 +395,6 @@ input{
     .Img2 {
         line-height: 35vh;
         width: 50vw;
-    }
-
-    .Img4 {
-        width: 60% !important;
     }
 
     #map {
@@ -576,20 +441,16 @@ input{
         align-items: center;
     }
 
-    .boxRow {
+    div.boxRow {
         padding-top: 7vh;
         padding-bottom: 7vh;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-    }
-
-    nav .menu-btn {
-        margin-bottom: 0;
+        justify-content: space-around;
     }
 
     nav .menu-btn i {
-        font-size: x-large;
+        display: none;
     }
 
     nav .logo {
@@ -601,13 +462,6 @@ input{
     }
 
     nav ul {
-        padding-top: 0;
-        padding-bottom: 20vh;
-        height: 100%;
-        width: 30%;
-    }
-
-    /* nav ul {
         align-items: center;
         display: flex;
         list-style: none;
@@ -654,7 +508,7 @@ input{
     a {
         text-decoration: none;
         color: inherit;
-    } */
+    }
 
     .lineBrk1 {
         display: none;
@@ -723,21 +577,11 @@ input{
     .imgsobre{
         width: 50vw;
     }
-
-    .lg-screen-RLpadding10 {
-        padding-right: 10%;
-        padding-left: 10%;
-    }
+    
 
 }
 
 @media (max-width: 900px) {
-
-    .closesec{
-        padding-right: 3px;
-        padding-top: 3%;
-    }
-
     .lg-screen {
         display: none;
     }
@@ -797,6 +641,12 @@ input{
         padding-bottom: 5%;
     }
 
+    nav .menu-btn i{
+        color:#A0A8A5;
+        font-size: 22px;
+        cursor: pointer;  
+    }
+
     nav .menu-btn {
         margin: 0;
     }
@@ -806,9 +656,42 @@ input{
     }
 
     nav ul {
+        position: fixed;
+        display: flex ;
+        flex-direction: column;
+        justify-items: center;
+        top: 80px;
+        left: -100%;
+        background-color: #F9F9F9;
+        height: 100vh;
         width: 100%;
-        padding-bottom: 20vh;
+        transition: all 0.3s ease;
     }
+
+    nav ul li {
+        display: block;
+        padding: 40px 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    nav ul li:hover {
+        text-decoration: none;
+        color: #FFF455;
+        background:#ebebeb;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+
+    nav ul li a:hover {
+        text-decoration: none;
+        color: #0F241D;
+        background:#ebebeb;
+        transition: 0.5s;
+        }
 
     p.txt1Center {
         padding: 20px ;
@@ -817,6 +700,11 @@ input{
     .lineBrk2 {
         display: none;
     }
+        
+    #click:checked ~ ul {
+        left: 0%;
+    }
+
 
     #map {
         height: 40vh;
@@ -867,6 +755,17 @@ input{
         padding-top: 10vh;
     }
 
+    .dropdown {
+        float: none;
+    }
+
+    .dropdown-content{
+        padding-top: 30px;
+    }
+    
+    .dropdown-content a {
+        padding: 10px;
+    }
     .inputlarge { 
         line-height: 24px;
         margin: 0 !important;
