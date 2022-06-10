@@ -8,9 +8,6 @@ api = 'http://127.0.0.1:3061'
 
 
 $(document).ready(() => {
-    postDonation.postDonation();
-    getDonation.getDonation();
-    getDonation2.getDonation2();
     users.list();
     blog.postagem();
     blogposts.postagens();
@@ -45,7 +42,6 @@ var users = {
     }
     
 };
-
 var user = {
 
     insert() {
@@ -353,63 +349,5 @@ var cadastroVoluntario = { //Colocar no onClick
     },
 }
 
-var postDonation = {
 
-    postDonation() {
-        var tltDoacao = document.querySelector("#titulo_doação").value;
-        var dsDoacao = document.querySelector("#dataP").value;
-        var vlDoacao = document.querySelector("#val_post").value;
 
-        $.ajax({
-            url: api + '/criaDoacao',
-            type: 'POST',
-            data: {tlt_doacao : tltDoacao, ds_doacao : dsDoacao, vl_valor : vlDoacao}
-        });
-    }
-};
-
-var getDonation = {
-
-    getDonation() {
-        $.ajax({
-            url: api + '/veDoacao',
-            type: 'GET',
-            success: data => {
-                var tx = '';
-                tx += '<div class="centerList">';
-                data.forEach(element => {
-                    tx += '<div class="card slim">';
-                        tx += '<h2 class="ttl2">' + element.tlt_doacao + '</h2>';
-                        tx += '<p class="txt2">' + "R$ " + element.vl_valor + '</p>';
-                        tx += '<p class="txt2">' + element.ds_doacao + '</p>';
-                    tx += '</div>';
-                });
-                $('#showDonations').html(tx)
-            }
-        })
-    }
-}
-
-var getDonation2 = {
-
-    getDonation2() {
-        $.ajax({
-            url: api + '/veDoacao',
-            type: 'GET',
-            success: data => {
-                var tx = '';
-                tx += '<div class="boxRow flexWrap lg-screen-RLpadding10">';
-                data.forEach(element => {
-                    tx += '<div class="card padding20px flexGrow">';
-                        tx += '<a href="PagDoacaoDinheiro.html">'
-                            tx += '<h2 class="ttl2">' + element.tlt_doacao + '</h2>';
-                            tx += '<p class="txt2">' + "R$ " + element.vl_valor + '</p>';
-                            tx += '<p class="txt1 wordBreak">' + element.ds_doacao + '</p>';
-                        tx += '</a>'
-                    tx += '</div>';
-                });
-                $('#showDonations2').html(tx)
-            }
-        })
-    }
-}
