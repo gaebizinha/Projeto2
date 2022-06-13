@@ -326,7 +326,10 @@ var atendimentos = {
             element.id_toalha +
             "</td><td>" +
             element.qt_bazar +
+            "</td><td>" +
+            `<button onclick="novoAtendimento.delete('${element.id_atendido}')">Excluir</button>` +
             "</td></tr>";
+
         });
         $("#tbody").html(tx);
       },
@@ -376,6 +379,16 @@ var novoAtendimento = {
           });
       }
     }
+  },
+
+  delete(id_atendido) {
+    $.ajax({
+      type: "DELETE",
+      url: api + "/excluiAtendimento",
+      data: { id_atendido: id_atendido },
+    }).done(() => {
+      window.location.reload();
+    });
   },
 };
 
@@ -512,11 +525,7 @@ var postDonation = {
     $.ajax({
       url: api + "/criaDoacao",
       type: "POST",
-      data: {
-        tlt_doacao: tlt_doacao,
-        ds_doacao: ds_doacao,
-        vl_valor: vl_valor,
-      },
+      data: { tlt_doacao: tlt_doacao, ds_doacao: ds_doacao, vl_valor: vl_valor },
     });
   },
 
@@ -524,9 +533,10 @@ var postDonation = {
     $.ajax({
       type: "DELETE",
       url: api + "/excluiDoacao",
-      data: { tlt_doacao: tlt_doacao },
+      data: { tlt_doacao: tlt_doacao},
     }).done(() => {
       window.location.reload();
+      alert("Excluido com sucesso")
     });
   },
 };
@@ -544,7 +554,7 @@ var getDonation = {
           tx += '<h2 class="ttl2">' + element.tlt_doacao + "</h2>";
           tx += '<p class="txt2">' + "R$ " + element.vl_valor + "</p>";
           tx += '<p class="txt2">' + element.ds_doacao + "</p>";
-          tx += `<button onclick="postDonation.delete('${element.tlt_doacao}')">Excluir</button>`;
+          tx += `<button onclick="postDonation.delete('${element.titulo_doacao}')">Excluir</button>`;
           tx += "</div>";
         });
         $("#showDonations").html(tx);
