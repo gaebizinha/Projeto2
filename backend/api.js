@@ -34,6 +34,20 @@ server.get('/users', (req, res) => {
 	});
 	db.close(); // Fecha o banco
 });
+server.get('/acolhido/:id', (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+	let id = req.params.id
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+  var sql = 'SELECT * FROM acolhido WHERE id_atendido ='+id+'';
+	db.all(sql, [],  (err, rows ) => {
+		if (err) {
+		    throw err;
+		}
+		res.json(rows);
+	});
+	db.close(); // Fecha o banco
+});
 // Insere um registro (é o C do CRUD - Create)
 server.post('/userinsert', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
