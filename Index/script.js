@@ -132,29 +132,29 @@ var blog = {
 };
 
 var blogposts = {
-    
     postagens() {
-        $.ajax({
-            url: api + '/vePostagem',
-            type: 'GET',
-            success: data => {
-                var tx = '';
-                tx += '<div class="centerList">';
-                data.forEach(element => {
-                    tx += '<div class="card slim">';
-                        tx += '<h2 class="ttl2">' + element.tlt_post + '</h2>';
-                        tx += '<p class="txt1">' + element.dt_post + '</p>';
-                        tx += '<div class="actions">';
-                        tx += '</div>';
-                    tx += '</div>';
-                });
-                $('#postsblog').html(tx);
-            }
-        });
-        
-    }
-    
-};
+      $.ajax({
+        url: api + "/vePostagem",
+        type: "GET",
+        success: (data) => {
+          var tx = "";
+          tx += '<div class="centerList">';
+          data.forEach((element) => {
+            tx += '<div class="card slim">';
+            tx += '<h2 class="ttl2">' + element.tlt_post + "</h2>";
+            tx += '<p class="txt1">' + element.dt_post + "</p>";
+            tx +=
+              `<button onclick="subirPost.delete('${element.tlt_post}')">Excluir</button>`;
+            tx += '<div class="actions">';
+            tx += "</div>";
+            tx += "</div>";
+          });
+          $("#postsblog").html(tx);
+        },
+      });
+    },
+  };
+  
 
 var subirPost = { //Colocar no onClick
 
@@ -183,35 +183,107 @@ var subirPost = { //Colocar no onClick
             }
         }
     },
-}
+
+    delete(tlt_post) {
+
+        $.ajax({
+            type: 'DELETE',
+            url: api + '/excluiPostagem',
+            data: {tlt_post: tlt_post},
+        }).done(() => {
+            window.location.reload()
+        })
+      },
+};
+    
+
 
 var lugaresvisitados = {
-    
     visita() {
-        $.ajax({
-            url: api + '/visualizaLugar',
-            type: 'GET',
-            success: data => {
-                var tx = '';
-                tx += '<div class="centerList">';
-                data.forEach(element => {
-                    tx += '<div class="card slim">';
-                        tx += '<h2 class="ttl2">' + element.nm_rua + ', ' + element.bairro + '</h2>';
-                        tx += '<p class="txt1">' + element.dt_visita + '</p>';
-                        tx += '<p class="txt1">Ponto de referencia: ' + element.nm_referencia + '</p>';
-                        tx += '<p class="txt1">Número de assistidos encontrados:' + element.nr_pessoas + '</p>';
-                        
-                        tx += '<div class="actions">';
-                        tx += '</div>';
-                    tx += '</div>';
-                });
-                $('#lugaresvisitados').html(tx);
-            }
-        });
+      $.ajax({
+        url: api + "/visualizaLugar",
+        type: "GET",
+        success: (data) => {
+          var tx = "";
+          tx += '<div class="centerList">';
+          data.forEach((element) => {
+            tx += '<div class="card slim">';
+            tx +=
+              '<h2 class="ttl2">' +
+              element.nm_rua +
+              ", " +
+              element.bairro +
+              "</h2>";
+            tx += '<p class="txt1">' + element.dt_visita + "</p>";
+            tx +=
+              '<p class="txt1">Ponto de referencia: ' +
+              element.nm_referencia +
+              "</p>";
+            tx +=
+              '<p class="txt1">Número de assistidos encontrados:' +
+              element.nr_pessoas +
+              "</p>";
+          tx +=
+          `<button onclick="acoeslugares.delete('${element.nm_rua}')">Excluir</button>`;
+  
+            tx += '<div class="actions">';
+            tx += "</div>";
+            tx += "</div>";
+          });
+          $("#lugaresvisitados").html(tx);
+        },
+      });
+    },
+  };
         
-    }
+
+var acoeslugares = {
+
+    insert() {
+        var nm_rua = document.querySelector("#nm_rua").value;
+        var bairro = document.querySelector("#bairro").value;
+        var dt_visita = document.querySelector("#dt_visita").value;
+        var nm_referencia = document.querySelector("#nm_referencia").value;
+        var nr_pessoas = document.querySelector("#nr_pessoas").value;
     
-};
+        if (nm_rua) {
+          if (nm_rua.trim() != "") {
+            $.ajax({
+              type: "POST",
+              url: api + "/cadastraLugar",
+              data: {
+                nm_rua : nm_rua,
+                bairro : bairro,
+                dt_visita: dt_visita,
+                nm_referencia : nm_referencia,
+                nr_pessoas: nr_pessoas,
+              },
+            })
+              .done(function () {
+                lugaresvisitados.visita();
+                alert("Salvo com sucesso");
+              })
+              .fail(function (msg) {
+                //console.log('FAIL');
+              })
+              .always(function (msg) {
+                //console.log('ALWAYS');
+              });
+          }
+        }
+      },
+
+    delete(nm_rua) {
+
+        $.ajax({
+            type: 'DELETE',
+            url: api + '/excluiLugar',
+            data: {nm_rua: nm_rua},
+        }).done(() => {
+            window.location.reload()
+        })
+    }
+}
 
 var atendimentos = {
     
