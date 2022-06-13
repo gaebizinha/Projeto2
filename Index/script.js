@@ -34,11 +34,14 @@ var users = {
                 var tx = '';
                 tx += '<div class="centerList">';
                 data.forEach(element => {
+                    tx += '<a href="">'
                     tx += '<div class="card slim bloco">';
+                        tx += '<p>'+element.id_atendido+'</p> '
                         tx += '<h2 class="ttl2">' + element.nm_nome + '</h2>';
                         tx += '<p class="txt1">' + element.dt_nascimento + '</p>';
                         tx += '<div class="actions">';
                         tx += '</div>';
+                        tx += '</a>'
                     tx += '</div>';
                 });
                 $('#main').html(tx);
