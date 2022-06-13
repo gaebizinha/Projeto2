@@ -484,6 +484,8 @@ var VoluntarioPriv = {
             element.nr_tel +
             " </td><td>" +
             element.dr_ajuda +
+            "</td><td>" +
+            `<button onclick="cadastroVoluntario.delete('${element.nm_email}')">Excluir</button>` +
             "</td></tr>";
         });
         $("#Vbody").html(tx);
@@ -527,7 +529,18 @@ var cadastroVoluntario = {
       }
     }
   },
+
+  delete(nm_email) {
+    $.ajax({
+      type: "DELETE",
+      url: api + "/excluiVoluntario",
+      data: { nm_email: nm_email},
+    }).done(() => {
+      window.location.reload();
+    });
+  },
 };
+
 
 var postDonation = {
   postDonation() {
