@@ -400,7 +400,6 @@ button:hover {
 button:active {
     background-color: #393939;
     color: #FFF455;
-    width: 85%;
 }
 
 nav ul li button {
