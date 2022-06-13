@@ -362,6 +362,20 @@ server.get('/visualizaDoacao', (req, res) => {
     db.close(); // Fecha o banco
 });
 
+server.delete('/excluiDoador', urlencodedParser, (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+	var sql = "DELETE FROM doadores WHERE nm_email = '"+ req.body.nm_email+"'";
+	db.all(sql, [],  (err, rows ) => {
+		if (err) {
+		    throw err;
+		}                 
+		res.json(rows);
+	});
+	db.close(); // Fecha o banco
+});
+
 //Voluntarios-----------------------------------------------------------------//
 
 server.post('/cadastraVoluntario', urlencodedParser, (req, res) => {

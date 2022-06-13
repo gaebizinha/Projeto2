@@ -409,7 +409,10 @@ var doadores = {
             element.nr_celular +
             " </td><td>" +
             element.dt_doacao +
+            "</td><td>" +
+            `<button onclick="novosdoadores.delete('${element.nm_email}')">Excluir</button>` +
             "</td></tr>";
+            
         });
         $("#doadores").html(tx);
       },
@@ -449,6 +452,16 @@ var novosdoadores = {
           });
       }
     }
+  },
+
+  delete(nm_email) {
+    $.ajax({
+      type: "DELETE",
+      url: api + "/excluiDoador",
+      data: { nm_email: nm_email},
+    }).done(() => {
+      window.location.reload();
+    });
   },
 };
 
