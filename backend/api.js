@@ -1,9 +1,8 @@
-
-const express = require('express'); 
+const express = require('express');
 const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 const hostname = '127.0.0.1';
-
+ 
 /* Servidor do Banco de Dados */
 const portback = 3061;
 const sqlite3 = require('sqlite3').verbose();
@@ -13,7 +12,9 @@ const DBPATH = 'revirarDB.db';
 server.use(express.static("../Index"));
 server.use(express.json());
 server.use(cors())
-
+server.use(bodyParser.urlencoded({ // Irá suportar urlenconded
+    extended: true
+}));
 
 /* Definição dos endpoints */
 
@@ -418,4 +419,34 @@ server.delete('/excluiVoluntario', urlencodedParser, (req, res) => {
 		res.json(rows);
 	});
 	db.close(); // Fecha o banco
+});
+
+// Consulta um registro (é R do CRUD - Read)------------LOGIN
+server.post('/login', (req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+    var login = req.body.user
+    console.log(login)
+    var senha = req.body.senha
+    console.log(senha)
+    var db = new sqlite3.Database(DBPATH); // Abre o banco
+    var sql = `SELECT * FROM users WHERE user = "${login}"`;
+    db.all(sql, [],  (err, rows) => {
+        if (err) {
+            throw err;
+        }
+        console.log(rows)
+        if (rows == '') {
+            res.status(400).send('Credenciais incorretas!')
+        } else {
+            console.log(rows[0])
+            if (rows[0].senha == senha) {
+                res.status(200).send('Usuário Logado!')
+            } else {
+                res.status(400).send('Credenciais incorretas!')
+            }
+        }
+       
+    });
+    db.close(); // Fecha o banco
 });

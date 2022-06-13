@@ -611,3 +611,32 @@ var getDonation2 = {
     });
   },
 };
+
+//LOGIN
+var Login = {
+ 
+    Login() {
+ 
+        var user = document.getElementById('userLogin').value
+        var senha = document.getElementById('senhaLogin').value
+ 
+        console.log(user)
+        console.log(senha)
+ 
+        $.ajax({
+            url: api + '/login',
+            type: 'POST',
+            data: {
+                user: user,
+                senha: senha
+            },
+            success: data => {
+                console.log(data)
+                window.location.href = '/PagAssistente.html'
+            }
+        }).fail(function(err) {
+            console.log(err)
+            alert('Credenciais Incorretas')
+        })
+    }
+}
