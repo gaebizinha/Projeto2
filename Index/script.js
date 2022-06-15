@@ -640,3 +640,36 @@ var Login = {
         })
     }
 }
+
+var getBanhos = {
+  getBanhos() {
+    var data1 = document.getElementById('data1').value
+    var data2 = document.getElementById('data2').value
+    
+    $.ajax({
+      url: api + "/relatorios",
+      type: "POST",
+      data: { 
+        data1 : data1,
+        data2 : data2
+      },
+      success: (data) => {
+        var qt_banho = data[0].qt_banho;
+        var texto_banho = '<p>' + qt_banho + "</p>";
+        var nr_lanches = data[0].nr_lanches;
+        var texto_lanches = '<p>' + nr_lanches + "</p>";
+        var qt_bazar = data[0].qt_bazar;
+        var texto_bazar = '<p>' + qt_bazar + "</p>";
+        var id_atendido = data[0].id_atendido;
+        var texto_atendimentos = '<p>' + id_atendido + "</p>";
+
+    
+        $("#banhos-periodo").html(texto_banho);
+        $("#lanches-periodo").html(texto_lanches);
+        $("#roupas-periodo").html(texto_bazar);
+        $("#atendimentos-periodo").html(texto_atendimentos);
+        
+      },
+    });
+  },
+};
