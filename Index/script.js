@@ -632,7 +632,7 @@ var Login = {
             },
             success: data => {
                 console.log(data)
-                window.location.href = '/PagAssistente.html'
+                window.location.href = api + '/PagAssistente.html'
             }
         }).fail(function(err) {
             console.log(err)
