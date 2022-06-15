@@ -430,7 +430,7 @@ server.post('/login', (req, res) => {
     var senha = req.body.senha
     console.log(senha)
     var db = new sqlite3.Database(DBPATH); // Abre o banco
-    var sql = `SELECT * FROM users WHERE user = "${login}"`;
+    var sql = `SELECT * FROM users WHERE users = "${login}"`;
     db.all(sql, [],  (err, rows) => {
         if (err) {
             throw err;
