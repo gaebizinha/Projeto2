@@ -9,6 +9,7 @@ api = "http://127.0.0.1:3061";
 $(document).ready(function () {
   $("#header").load("NavBar.html");
   $("#footer").load("Footer.html");
+  $("#OndeEstamos").load("OndeEstamos.html")
 });
 
 //Faz os as funções GET serem ativados quando o documento é aberto

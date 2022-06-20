@@ -13,16 +13,19 @@
 }
 
 ::-webkit-scrollbar-track {
-    border-radius: 100vw;
-    background: #F9F9F9;
+    background: #393939;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(white, #FFF455, white);
+    background: linear-gradient(rgba(0, 0, 0, 0.150), #FFF455, rgba(0, 0, 0, 0.150));
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(white, #FFF455, #FFF455, #FFF455, white);
+    background: linear-gradient(rgba(0, 0, 0, 0.150), #FFF455, #FFF455, rgba(0, 0, 0, 0.150));
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(rgba(0, 0, 0, 0.150), #FFF455, #FFF455, #FFF455, rgba(0, 0, 0, 0.150));
 }
 
 
@@ -45,16 +48,17 @@ header {
 }
 
 nav {
-    box-shadow: 0px 5px 10px #ebebeb;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.250);
     height: 80px;
-    background: #F9F9F9;
+    /* background: #F9F9F9; */
+    background: #393939;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0px 50px 0px 50px;
 }
 
-a {
+.noDec {
     text-decoration: none !important;
     color: inherit !important;
 }
@@ -83,7 +87,8 @@ nav ul {
     justify-content:space-between;
     top: 80px;
     right: -100%;
-    background-color: #F9F9F9;
+    /* background: #767676; */
+    background-color: #ebebeb;
     padding-top: 10vh;
     height: 100%;
     transition: all 0.5s ease;
@@ -93,23 +98,24 @@ nav ul li {
     display: inline-block;
     padding: 10px 0;
     text-align: center;
+    transition: 0.5s;
 }
 
 nav ul li a {
     font-size: 20px;
+    color: #FFF455;
 }
 
 nav ul li:hover {
     text-decoration: none;
-    background:#ebebeb;
-    transition: 0.5s;
+    background:#f2f2f2;
     cursor: pointer;
+    transform: translateX(10px) translateY(1px) scaleX(1.06);
 }
 
 nav ul li a:hover {
     text-decoration: none;
     color: #0F241D;
-    background:#ebebeb;
 }
 
 nav ul li a:active {
@@ -127,7 +133,7 @@ nav .menu-btn i{
 
 nav .menu-btn i:hover{
     background: rgba(160, 168, 165, 0.2);
-    color:black;
+    color:#F9F9F9;
 }
 
 nav .menu-btn i:active{
@@ -274,7 +280,7 @@ div.card {
     border-radius: 10px;
     text-align: center;
     margin: 20px;
-    box-shadow: 0px 5px 10px #ebebeb;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.250);
     transition: transform 0.3s ease;
 }
 
@@ -286,7 +292,7 @@ div.card2 {
     border-radius: 10px;
     text-align: start;
     margin: 20px;
-    box-shadow: 0px 10px 10px #ebebeb;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.250);
     height: 20vh;
     transition: transform 0.3s ease;
 }
@@ -369,7 +375,7 @@ div.card2:hover {
 nav ul li a {
     text-transform: uppercase;
     text-decoration: none;
-    color: #0F241D;
+    /* color: #0F241D; */
 }
 
 button {
@@ -381,7 +387,8 @@ button {
     font-weight: 600;
     width: 80%;
     align-self: center;
-    box-shadow: 0px 5px 10px #ebebeb;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.250);
+    /* box-shadow: 0px 5px 10px #ebebeb; */
     transition: transform 0.3s ease;
 }
 
@@ -426,7 +433,7 @@ footer div ul {
 }
 
 #map {
-    box-shadow: 0px 5px 10px #ebebeb;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.250);
 }
 
 input{
@@ -493,8 +500,16 @@ input{
     word-break: break-word;
 }
 
+.closesec {
+    position: sticky;
+    top: 12vh;
+}
+
 
 @media (min-width: 900px) {
+    .closeBtn {
+        width: 5vw;
+    }
 
     .closesec{
         padding-right: 5%;
@@ -662,13 +677,14 @@ input{
     }
 
     .imgsb1{
-        width: 100%;
+        width: 95%;
     }
     .icon2{
         width:11vw;
     }
     .imgsr{
-        width: 40vw;
+        border-radius: 30px;
+        width: 50vw;
     }
     #ods{
         width: 100%;
@@ -724,9 +740,16 @@ input{
         padding-left: 10%;
     }
 
+    .lg-screen-width30 {
+        width: 30vw;
+    }
+
 }
 
 @media (max-width: 900px) {
+    .closeBtn {
+        width: 10vw;
+    }
 
     .closesec{
         padding-right: 3px;
@@ -822,10 +845,11 @@ input{
         display: flex;
         padding: auto;
         margin-block: 10px;
+        border-radius: 9vh;
     }
 
     .imgsb1{
-        margin:0;
+        margin: 0;
     }
 
     .valores{
