@@ -1,15 +1,17 @@
-window.addEventListener("scroll", function () {
+window.addEventListener("scroll", function () { //faz o icone subir quando a pagina rola para cima
   var img = document.querySelector("img");
   img.classList.toggle("sticky", window.scrollY > 0);
 });
 
-api = "http://127.0.0.1:3061";
+api = "http://127.0.0.1:3061"; 
 
+//Usado para so precisar link nav e footer nas paginas e não precisar escrever todo o código.
 $(document).ready(function () {
   $("#header").load("NavBar.html");
   $("#footer").load("Footer.html");
 });
 
+//Faz os as funções GET serem ativados quando o documento é aberto
 $(document).ready(() => {
   getDonation.getDonation();
   getDonation2.getDonation2();
@@ -22,6 +24,9 @@ $(document).ready(() => {
   VoluntarioPriv.cadastroV();
 });
 
+//Integração tabela acolhido ------------------------------------//
+
+//Mostra pessoas cadastradas -> Foi usado o metodo Get ---------//
 var users = {
   list() {
     $.ajax({
@@ -46,6 +51,8 @@ var users = {
     });
   },
 };
+
+//Cadastra pessoas no banco de dados a partir do formulario --------------//
 var user = {
   insert() {
     var nome = document.querySelector("#nome").value;
@@ -124,6 +131,9 @@ var user = {
   },
 };
 
+//Integração tabela post (BLOG) --------------------------------------//
+
+//Mostra postagem no site -> Foi usado o metodo GET -------------------//
 var blog = {
   postagem() {
     $.ajax({
@@ -148,6 +158,7 @@ var blog = {
   },
 };
 
+//Mostra postagens na area privada -> Usado GET ---------------------------//
 var blogposts = {
   postagens() {
     $.ajax({
@@ -171,10 +182,11 @@ var blogposts = {
   },
 };
 
+
 var subirPost = {
   //Colocar no onClick
 
-  insert() {
+  insert() { //Cadastra postagem no banco de dados ---------------------//
     var titulo_post = document.querySelector("#titulo_post").value;
     var dataP = document.querySelector("#dataP").value;
     var img = document.querySelector("#img_post").value;
@@ -205,7 +217,7 @@ var subirPost = {
     }
   },
 
-  delete(tlt_post) {
+  delete(tlt_post) { //Deleta postagem do banco de dados ---------------------//
     $.ajax({
       type: "DELETE",
       url: api + "/excluiPostagem",
@@ -216,6 +228,9 @@ var subirPost = {
   },
 };
 
+//Integração tabela lugares ---------------------------------------------------//
+
+//Mostra Lugares visitados -> Metodo GET ------------------------------------------//
 var lugaresvisitados = {
   visita() {
     $.ajax({
@@ -253,6 +268,7 @@ var lugaresvisitados = {
   },
 };
 
+//Insere dados no banco de dados
 var acoeslugares = {
   insert() {
     var nm_rua = document.querySelector("#nm_rua").value;
@@ -288,6 +304,7 @@ var acoeslugares = {
     }
   },
 
+  //deleta do banco de dados
   delete(nm_rua) {
     $.ajax({
       type: "DELETE",
@@ -298,7 +315,8 @@ var acoeslugares = {
     });
   },
 };
-
+//Integração dos atendimentos -----------/
+//Usa o get para mostrar atendimentos realizados em uma tabela
 var atendimentos = {
   tabela() {
     $.ajax({
@@ -337,6 +355,7 @@ var atendimentos = {
   },
 };
 
+//Insere atendimentos no banco de dados
 var novoAtendimento = {
   //Colocar no onClick
 
@@ -380,7 +399,7 @@ var novoAtendimento = {
       }
     }
   },
-
+  //deleta atendimentos do banco de dados
   delete(id_atendido) {
     $.ajax({
       type: "DELETE",
@@ -392,10 +411,13 @@ var novoAtendimento = {
   },
 };
 
+//Integração da tabela doadores
+
+//Mostra doadores cadastrados na area privada
 var doadores = {
   dados() {
     $.ajax({
-      url: api + "/visualizaDoacao", //nm_nomedoador, nm_email, nr_celular, dt_doacao
+      url: api + "/visualizaDoacao", 
       type: "GET",
       success: (data) => {
         var tx = "";
@@ -420,6 +442,7 @@ var doadores = {
   },
 };
 
+//insere dados no banco de dados
 var novosdoadores = {
   //Colocar no onClick
 
@@ -453,7 +476,7 @@ var novosdoadores = {
       }
     }
   },
-
+  //deleta dados do banco de dados
   delete(nm_email) {
     $.ajax({
       type: "DELETE",
@@ -464,7 +487,8 @@ var novosdoadores = {
     });
   },
 };
-
+//Inegração da databela Voluntarios
+//Mostra voluntarios cadastrados
 var VoluntarioPriv = {
   cadastroV() {
     $.ajax({
@@ -494,6 +518,7 @@ var VoluntarioPriv = {
   },
 };
 
+//Cadastra no banco de dados
 var cadastroVoluntario = {
   //Colocar no onClick
 
@@ -529,7 +554,7 @@ var cadastroVoluntario = {
       }
     }
   },
-
+  //deleta do banco de dados
   delete(nm_email) {
     $.ajax({
       type: "DELETE",
@@ -541,7 +566,9 @@ var cadastroVoluntario = {
   },
 };
 
+//Inegração das tabela doacao
 
+//Cadastra no banco da dados
 var postDonation = {
   postDonation() {
     var tlt_doacao = document.querySelector("#titulo_doacao").value;
@@ -554,7 +581,7 @@ var postDonation = {
       data: { tlt_doacao: tlt_doacao, ds_doacao: ds_doacao, vl_valor: vl_valor },
     });
   },
-
+  //deleta do banco de dados
   delete(tlt_doacao) {
     $.ajax({
       type: "DELETE",
@@ -566,7 +593,7 @@ var postDonation = {
     });
   },
 };
-
+//Mostra doação na area privada
 var getDonation = {
   getDonation() {
     $.ajax({
@@ -588,7 +615,7 @@ var getDonation = {
     });
   },
 };
-
+//Mostra pedidos de doação na area publica
 var getDonation2 = {
   getDonation2() {
     $.ajax({
@@ -612,7 +639,7 @@ var getDonation2 = {
   },
 };
 
-//LOGIN
+//Ingração do LOGIN
 var Login = {
  
     Login() {
@@ -641,19 +668,20 @@ var Login = {
     }
 }
 
+//Integração dos relatorios (usado a tabela atendimentos)
 var getBanhos = {
   getBanhos() {
-    var data1 = document.getElementById('data1').value
+    var data1 = document.getElementById('data1').value  //variaveis para pegar dados do html
     var data2 = document.getElementById('data2').value
     
     $.ajax({
       url: api + "/relatorios",
       type: "POST",
       data: { 
-        data1 : data1,
+        data1 : data1, //datas que serão usadas para consutar banco de dados
         data2 : data2
       },
-      success: (data) => {
+      success: (data) => { //define quais dados serão acessados e atribui a variaveis
         var qt_banho = data[0].qt_banho;
         var texto_banho = '<p>' + qt_banho + "</p>";
         var nr_lanches = data[0].nr_lanches;
@@ -663,7 +691,7 @@ var getBanhos = {
         var id_atendido = data[0].id_atendido;
         var texto_atendimentos = '<p>' + id_atendido + "</p>";
 
-    
+        //insere o texto no html
         $("#banhos-periodo").html(texto_banho);
         $("#lanches-periodo").html(texto_lanches);
         $("#roupas-periodo").html(texto_bazar);
