@@ -229,9 +229,14 @@ var subirPost = {
             img: img,
             txt_post: texto_post,
           },
+          
+          
         })
           .done(function () {
             blog.postagem();
+            alert("Salvo com sucesso!");
+           
+          
           })
           .fail(function (msg) {
             //console.log('FAIL');
@@ -239,7 +244,9 @@ var subirPost = {
           .always(function (msg) {
             //console.log('ALWAYS');
           });
+          
       }
+      
     }
   },
 

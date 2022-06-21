@@ -355,7 +355,7 @@ server.post('/cadastraDoador', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-	var sql = "INSERT INTO doadores (nm_nomedoador, nm_email, nr_celular, dt_doacao ) VALUES ('" + req.nm_nomedoador + "','"+ req.body.nm_email +"', '"+ req.body.nr_celular +"', '"+ req.body.dt_doacao +"' )"; 
+	var sql = "INSERT INTO doadores (nm_nomedoador, nm_email, nr_celular, dt_doacao ) VALUES ('" + req.body.nm_nomedoador + "','"+ req.body.nm_email +"', '"+ req.body.nr_celular +"', '"+ req.body.dt_doacao +"' )"; 
 	db.all(sql, [],  (err, rows ) => {
 		if (err) {
 		    throw err;
@@ -402,7 +402,7 @@ server.post('/cadastraVoluntario', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-	var sql = "INSERT INTO voluntarios (voluntario, nm_email, dt_idade, nr_tel, dr_ajuda) VALUES ('" + req.voluntario + "','"+ req.body.nm_email +"', '"+ req.body.dt_idade +"', '"+ req.body.nr_tel +"', '"+ req.body.dr_ajuda +"' )"; 
+	var sql = "INSERT INTO voluntarios (voluntario, nm_email, dt_idade, nr_tel, dr_ajuda) VALUES ('" + req.body.voluntario + "','"+ req.body.nm_email +"', '"+ req.body.dt_idade +"', '"+ req.body.nr_tel +"', '"+ req.body.dr_ajuda +"' )"; 
 	db.all(sql, [],  (err, rows ) => {
 		if (err) {
 		    throw err;
