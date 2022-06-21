@@ -740,8 +740,16 @@ input{
         padding-left: 10%;
     }
 
+    .lg-screen-width25 {
+        width: 25vw;
+    }
+
     .lg-screen-width30 {
         width: 30vw;
+    }
+
+    .lg-screen-width35 {
+        width: 35vw;
     }
 
 }
