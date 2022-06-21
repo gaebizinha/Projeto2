@@ -37,14 +37,39 @@ var users = {
         var tx = "";
         tx += '<div class="centerList">';
         data.forEach((element) => {
-          tx += '<a href="">';
           tx += '<div class="card slim bloco">';
-          tx += "<p>" + element.id_atendido + "</p> ";
-          tx += '<h2 class="ttl2">' + element.nm_nome + "</h2>";
-          tx += '<p class="txt1">' + element.dt_nascimento + "</p>";
+          tx += '<input  id="id'+element.id_atendido+'" value="'+element.id_atendido+'" disabled>';
+          tx += '<input class="ttl2" id="nome'+element.id_atendido+'" value="' + element.nm_nome +'" >';
+          tx += '<input class="txt1" id="dt'+element.id_atendido+'" value="'+ element.dt_nascimento +'" disabled>';
+          tx += '<input class="txt1" id="cpf'+element.id_atendido+'" value="'+ element.nr_cpf +'" disabled>';
+          tx += '<input class="txt1" id="rg'+element.id_atendido+'" value="'+ element.nr_rg +'" disabled>' ;
+          tx += '<input class="txt1" id="inL'+element.id_atendido+'" value="'+ element.in_locais + '" disabled>';
+          tx += '<input class="txt1" id="dsL'+element.id_atendido+'"value="'+ element.ds_locais +'" disabled>' ;
+          tx += '<input class="txt1" id="ds_A'+element.id_atendido+'" value="'+ element.ds_albergue +'" disabled>';
+          tx += '<input class="txt1" id="ds_domici'+element.id_atendido+'" value="'+ element.ds_domiciliopart +'" disabled>';
+          tx += '<input class="txt1" id="qt_rua'+element.id_atendido+'" value="'+ element.qt_rua +'" disabled>';
+          tx += '<input class="txt1" id="qt_A'+element.id_atendido+'" value="'+ element.qt_albuergue +'" disabled>';
+          tx += '<input class="txt1"  id="qt_dom'+element.id_atendido+'" value="'+ element.qt_domicilio +'" disabled>';
+          tx += '<input class="txt1"  id="qt_mr'+element.id_atendido+'" value="'+ element.qt_morarua +'" disabled>';
+          tx += '<input class="txt1" id="motivR'+element.id_atendido+'" value="'+ element.motivRua +'" disabled>';
+          tx += '<input class="txt1" id="tempC'+element.id_atendido+'" value="'+ element.TempCid +'" disabled>';
+          tx += '<input class="txt1" id="familia'+element.id_atendido+'" value="'+ element.st_familia +'" disabled>';
+          tx += '<input class="txt1" id="ds_com'+element.id_atendido+'" value="'+ element.ds_comunitarias +'" disabled>';
+          tx += '<input class="txt1" id="ds_a'+element.id_atendido+'" value="'+ element.ds_atendido +'" disabled>';
+          tx += '<input class="txt1" id="carteira'+element.id_atendido+'" value="'+ element.st_carteiratrab +'" disabled>';
+          tx += '<input class="txt1" id="ds_r'+element.id_atendido+'" value="'+ element.ds_renda +'" disabled>';
+          tx += '<input class="txt1" id="prog'+element.id_atendido+'" value="'+ element.ds_progrenda +'" disabled>';
+          tx += '<input class="txt1" id="proGR'+element.id_atendido+'" value="'+ element.ds_programarenda +'" disabled>';
+          tx += '<input class="txt1" id="sd1'+element.id_atendido+'" value="'+ element.ecServico1_data +'" disabled>';
+          tx += '<input class="txt1" id="s1'+element.id_atendido+'" value="'+ element.ecServico1 +'" disabled>';
+          tx += '<input class="txt1" id="sd2'+element.id_atendido+'" value="'+ element.ecServico2_data +'" disabled>';
+          tx += '<input class="txt1" id="s2'+element.id_atendido+'" value="'+ element.ecServico2 +'" disabled>';
+          tx += '<button class="smbtn" id="most'+element.id_atendido+'" onclick="lb('+element.id_atendido+')">Editar</button>'
+
+
+
           tx += '<div class="actions">';
           tx += "</div>";
-          tx += "</a>";
           tx += "</div>";
         });
         $("#main").html(tx);
@@ -702,3 +727,114 @@ var getBanhos = {
     });
   },
 };
+
+
+
+function lb(a){
+  
+  var nm = (document.querySelector('#nome'+a+'').removeAttribute('disabled'));
+  var dtNa = document.querySelector('#dt'+a+'').removeAttribute('disabled');
+  var cpff = document.querySelector('#cpf'+a+'').removeAttribute('disabled');
+  var rgg = document.querySelector('#rg'+a+'').removeAttribute('disabled');
+  var inLoc = document.querySelector('#inL'+a+'').removeAttribute('disabled');
+  var ds_L = document.querySelector('#dsL'+a+'').removeAttribute('disabled');
+  var ds_alber = document.querySelector('#ds_A'+a+'').removeAttribute('disabled');
+  var ds_domicil = document.querySelector('#ds_domici'+a+'').removeAttribute('disabled');
+  var q_rua = document.querySelector('#qt_rua'+a+'').removeAttribute('disabled');
+  var qt_alb = document.querySelector('#qt_A'+a+'').removeAttribute('disabled');
+  var qt_domi = document.querySelector('#qt_dom'+a+'').removeAttribute('disabled');
+  var qt_moraR = document.querySelector('#qt_mr'+a+'').removeAttribute('disabled');
+  var motivoR = document.querySelector('#motivR'+a+'').removeAttribute('disabled');
+  var tCidade = document.querySelector('#tempC'+a+'').removeAttribute('disabled');
+  var fam = document.querySelector('#familia'+a+'').removeAttribute('disabled');
+  var ds_comun = document.querySelector('#ds_com'+a+'').removeAttribute('disabled');
+  var ds_alb = document.querySelector('#ds_a'+a+'').removeAttribute('disabled');
+  var carte = document.querySelector('#carteira'+a+'').removeAttribute('disabled');
+  var ds_rend = document.querySelector('#ds_r'+a+'').removeAttribute('disabled');
+  var progR = document.querySelector('#prog'+a+'').removeAttribute('disabled');
+  var programaR = document.querySelector('#proGR'+a+'').removeAttribute('disabled');
+  var serviceD1 = document.querySelector('#sd1'+a+'').removeAttribute('disabled');
+  var service1 = document.querySelector('#s1'+a+'').removeAttribute('disabled');
+  var serviceD2 = document.querySelector('#sd2'+a+'').removeAttribute('disabled');
+  var service2 = document.querySelector('#s2'+a+'').removeAttribute('disabled');
+  var cont ='<button class="smbtn" id="most'+a+'" onclick="ed.edit('+a+')">Salvar</button>'
+  $("#most1").html(cont)
+  }
+
+var ed = {
+
+
+  edit(a) {
+    console.log(a)
+    var nm = String(document.querySelector('#nome'+a+'').value);
+    var dtNa = document.querySelector('#dt'+a+'').value;
+    var cpff = document.querySelector('#cpf'+a+'').value;
+    var rgg = document.querySelector('#rg'+a+'').value;
+    var inLoc = document.querySelector('#inL'+a+'').value;
+    var ds_L = document.querySelector('#dsL'+a+'').value;
+    var ds_alber = document.querySelector('#ds_A'+a+'').value;
+    var ds_domicil = document.querySelector('#ds_domici'+a+'').value;
+    var q_rua = document.querySelector('#qt_rua'+a+'').value;
+    var qt_alb = document.querySelector('#qt_A'+a+'').value;
+    var qt_domi = document.querySelector('#qt_dom'+a+'').value;
+    var qt_moraR = document.querySelector('#qt_mr'+a+'').value;
+    var motivoR = document.querySelector('#motivR'+a+'').value;
+    var tCidade = document.querySelector('#tempC'+a+'').value;
+    var fam = document.querySelector('#familia'+a+'').value;
+    var ds_comun = document.querySelector('#ds_com'+a+'').value;
+    var ds_alb = document.querySelector('#ds_a'+a+'').value;
+    var carte = document.querySelector('#carteira'+a+'').value;
+    var ds_rend = document.querySelector('#ds_r'+a+'').value;
+    var progR = document.querySelector('#prog'+a+'').value;
+    var programaR = document.querySelector('#proGR'+a+'').value;
+    var serviceD1 = document.querySelector('#sd1'+a+'').value;
+    var service1 = document.querySelector('#s1'+a+'').value;
+    var serviceD2 = document.querySelector('#sd2'+a+'').value;
+    var service2 = document.querySelector('#s2'+a+'').value;
+    console.log(nm)
+
+  $.ajax({
+    
+    url: api + '/editarUsuarios',
+    type: 'POST',
+    data: {
+        userId: a,
+        nm_nome: nm,
+        dt_nas: dtNa,
+        nr_cpf: cpff,
+        nr_rg: rgg,
+        in_locais: inLoc,
+        ds_locais: ds_L,
+        ds_albergue: ds_alber,
+        ds_domiciliop: ds_domicil,
+        qt_rua: q_rua,
+        qt_albuergue: qt_alb,
+        qt_domicilio: qt_domi,
+        qt_morarua: qt_moraR,
+        st_familia: fam,
+        ds_comunitarias: ds_comun,
+        st_cattrab: carte,
+        ds_renda: ds_rend,
+        ds_progrenda: progR,
+        ds_programarenda: programaR
+
+
+
+
+        
+
+    },
+    success: data => {
+      Swal.fire(
+        'Prontinho!',
+        'clique para fechar!',
+        'success'
+      )
+   
+  }
+    
+  }
+    
+    )}
+
+    }

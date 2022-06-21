@@ -69,13 +69,13 @@ server.post('/userinsert', urlencodedParser, (req, res) => {
 });
 
 //EDIT --------------------------------------------------------//
-server.patch('/editarUsuarios', urlencodedParser, (req, res) => {
+server.post('/editarUsuarios', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	console.log(req.body.userId)
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
 
 	console.log("req:");
-	sql = "UPDATE acolhido SET nm_nome = '" + req.body.nm_nome + "', dt_nascimento = '"+req.body.dt_nas+"', nr_cpf = '"+req.body.nr_cpf+"', nr_rg = '"+req.body.nr_rg+"', in_locais = '"+req.body.in_locais+"', in_locais = '"+req.body.ds_locais+"',  ds_albergue = '"+req.body.ds_albergue+"', ds_domiciliopart = '"+req.body.ds_domiciliop+"', qt_rua = '"+req.body.qt_rua+"', qt_albergue = '"+req.body.qt_albuergue+"',  qt_domicilio = '"+req.body.qt_domicilio+"', qt_morarua = '"+req.body.qt_morarua+"', st_familia = '"+req.body.st_familia+"', ds_comunitarias = '"+req.body.ds_comunitarias+"', ds_atendido = '"+req.body.ds_atendido+"', st_carteiratrab = '"+req.body.st_cattrab+"', ds_renda = '"+req.body.ds_renda+"', ds_progrenda  = '"+req.body.ds_progrenda+"', ds_programarenda = '"+req.body.programarenda+"' WHERE id_atendido = " + req.body.userId;
+	sql = "UPDATE acolhido SET nm_nome = '" + req.body.nm_nome + "', dt_nascimento = '"+req.body.dt_nas+"', nr_cpf = '"+req.body.nr_cpf+"', nr_rg = '"+req.body.nr_rg+"', in_locais = '"+req.body.in_locais+"', in_locais = '"+req.body.ds_locais+"',  ds_albergue = '"+req.body.ds_albergue+"', ds_domiciliopart = '"+req.body.ds_domiciliop+"', qt_rua = '"+req.body.qt_rua+"', qt_albergue = '"+req.body.qt_albuergue+"',  qt_domicilio = '"+req.body.qt_domicilio+"', qt_morarua = '"+req.body.qt_morarua+"', st_familia = '"+req.body.st_familia+"', ds_comunitarias = '"+req.body.ds_comunitarias+"', ds_atendido = '"+req.body.ds_atendido+"', st_carteiratrab = '"+req.body.st_cattrab+"', ds_renda = '"+req.body.ds_renda+"', ds_progrenda  = '"+req.body.ds_progrenda+"', ds_programarenda = '"+req.body.programarenda+"' WHERE id_atendido = '" + req.body.userId+"'";
 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.run(sql, [],  err => {
