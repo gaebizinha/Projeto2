@@ -189,7 +189,7 @@ server.post('/criaPostagem', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
 
-	sql = "INSERT INTO post (tlt_post, txt_post, img, dt_post) VALUES ('" + req.body.tlt_post + "','"+ req.body.txt_post + "','"+ req.body.img +"', '"+ req.body.dt_post+"')"; 
+	sql = "INSERT INTO post (tlt_post, txt_post, dt_post) VALUES ('" + req.body.tlt_post + "','"+ req.body.txt_post + "', '"+ req.body.dt_post+"')"; 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.run(sql, [],  err => {
 		if (err) {

@@ -222,7 +222,6 @@ var subirPost = {
   insert() { //Cadastra postagem no banco de dados ---------------------//
     var titulo_post = document.querySelector("#titulo_post").value;
     var dataP = document.querySelector("#dataP").value;
-    var img = document.querySelector("#img_post").value;
     var texto_post = document.querySelector("#texto_post").value;
 
     if (titulo_post) {
@@ -233,7 +232,6 @@ var subirPost = {
           data: {
             tlt_post: titulo_post,
             dt_post: dataP,
-            img: img,
             txt_post: texto_post,
           },
           
@@ -241,6 +239,7 @@ var subirPost = {
         })
           .done(function () {
             blog.postagem();
+            window.location.reload();
             alert("Salvo com sucesso!");
            
           
@@ -264,6 +263,7 @@ var subirPost = {
       data: { tlt_post: tlt_post },
     }).done(() => {
       window.location.reload();
+      alert("Excluido com sucesso!")
     });
   },
 };
@@ -332,6 +332,7 @@ var acoeslugares = {
         })
           .done(function () {
             lugaresvisitados.visita();
+            window.location.reload();
             alert("Salvo com sucesso");
           })
           .fail(function (msg) {
@@ -352,6 +353,7 @@ var acoeslugares = {
       data: { nm_rua: nm_rua },
     }).done(() => {
       window.location.reload();
+      alert("Excluido com sucesso!")
     });
   },
 };
@@ -429,6 +431,8 @@ var novoAtendimento = {
         })
           .done(function () {
             atendimentos.tabela();
+            window.location.reload();
+            alert("Salvo com sucesso!")
           })
           .fail(function (msg) {
             //console.log('FAIL');
@@ -447,6 +451,7 @@ var novoAtendimento = {
       data: { id_atendido: id_atendido },
     }).done(() => {
       window.location.reload();
+      alert("Excluido com sucesso")
     });
   },
 };
@@ -506,6 +511,8 @@ var novosdoadores = {
         })
           .done(function () {
             doadores.dados();
+            window.location.reload();
+            alert("Salvo com sucesso!")
           })
           .fail(function (msg) {
             //console.log('FAIL');
@@ -524,6 +531,7 @@ var novosdoadores = {
       data: { nm_email: nm_email},
     }).done(() => {
       window.location.reload();
+      alert("Excluido com sucesso!")
     });
   },
 };
@@ -583,7 +591,8 @@ var cadastroVoluntario = {
           },
         })
           .done(function () {
-            voluntarioPriv.cadastroV();
+            window.location.reload();
+            alert("Salvo com sucesso!")
           })
           .fail(function (msg) {
             //console.log('FAIL');
@@ -602,6 +611,7 @@ var cadastroVoluntario = {
       data: { nm_email: nm_email},
     }).done(() => {
       window.location.reload();
+      alert("Excluido com sucesso!")
     });
   },
 };
@@ -619,6 +629,9 @@ var postDonation = {
       url: api + "/criaDoacao",
       type: "POST",
       data: { tlt_doacao: tlt_doacao, ds_doacao: ds_doacao, vl_valor: vl_valor },
+    }).done(() => {
+      window.location.reload();
+      alert("Salvo com sucesso")
     });
   },
   //deleta do banco de dados
@@ -647,7 +660,7 @@ var getDonation = {
           tx += '<h2 class="ttl2">' + element.tlt_doacao + "</h2>";
           tx += '<p class="txt2">' + "R$ " + element.vl_valor + "</p>";
           tx += '<p class="txt2">' + element.ds_doacao + "</p>";
-          tx += `<button onclick="postDonation.delete('${element.titulo_doacao}')">Excluir</button>`;
+          tx += `<button onclick="postDonation.delete('${element.tlt_doacao}')">Excluir</button>`;
           tx += "</div>";
         });
         $("#showDonations").html(tx);
