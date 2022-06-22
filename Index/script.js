@@ -38,31 +38,30 @@ var users = {
         tx += '<div class="centerList">';
         data.forEach((element) => {
           tx += '<div class="card slim bloco">';
-          tx += '<input  id="id'+element.id_atendido+'" value="'+element.id_atendido+'" disabled>';
-          tx += '<input class="ttl2" id="nome'+element.id_atendido+'" value="' + element.nm_nome +'" >';
-          tx += '<input class="txt1" id="dt'+element.id_atendido+'" value="'+ element.dt_nascimento +'" disabled>';
-          tx += '<input class="txt1" id="cpf'+element.id_atendido+'" value="'+ element.nr_cpf +'" disabled>';
-          tx += '<input class="txt1" id="rg'+element.id_atendido+'" value="'+ element.nr_rg +'" disabled>' ;
-          tx += '<input class="txt1" id="inL'+element.id_atendido+'" value="'+ element.in_locais + '" disabled>';
-          tx += '<input class="txt1" id="dsL'+element.id_atendido+'"value="'+ element.ds_locais +'" disabled>' ;
-          tx += '<input class="txt1" id="ds_A'+element.id_atendido+'" value="'+ element.ds_albergue +'" disabled>';
-          tx += '<input class="txt1" id="ds_domici'+element.id_atendido+'" value="'+ element.ds_domiciliopart +'" disabled>';
-          tx += '<input class="txt1" id="qt_rua'+element.id_atendido+'" value="'+ element.qt_rua +'" disabled>';
-          tx += '<input class="txt1" id="qt_A'+element.id_atendido+'" value="'+ element.qt_albuergue +'" disabled>';
-          tx += '<input class="txt1"  id="qt_dom'+element.id_atendido+'" value="'+ element.qt_domicilio +'" disabled>';
-          tx += '<input class="txt1"  id="qt_mr'+element.id_atendido+'" value="'+ element.qt_morarua +'" disabled>';
-          tx += '<input class="txt1" id="motivR'+element.id_atendido+'" value="'+ element.motivRua +'" disabled>';
-          tx += '<input class="txt1" id="tempC'+element.id_atendido+'" value="'+ element.TempCid +'" disabled>';
-          tx += '<input class="txt1" id="familia'+element.id_atendido+'" value="'+ element.st_familia +'" disabled>';
-          tx += '<input class="txt1" id="ds_com'+element.id_atendido+'" value="'+ element.ds_comunitarias +'" disabled>';
-          tx += '<input class="txt1" id="ds_a'+element.id_atendido+'" value="'+ element.ds_atendido +'" disabled>';
-          tx += '<input class="txt1" id="carteira'+element.id_atendido+'" value="'+ element.st_carteiratrab +'" disabled>';
-          tx += '<input class="txt1" id="ds_r'+element.id_atendido+'" value="'+ element.ds_renda +'" disabled>';
-          tx += '<input class="txt1" id="prog'+element.id_atendido+'" value="'+ element.ds_progrenda +'" disabled>';
-          tx += '<input class="txt1" id="proGR'+element.id_atendido+'" value="'+ element.ds_programarenda +'" disabled>';
-          tx += '<input class="txt1" id="sd1'+element.id_atendido+'" value="'+ element.ecServico1_data +'" disabled>';
+          tx += 'Nome<input class="ttl2" id="nome'+element.id_atendido+'" value="' + element.nm_nome +'" disabled>';
+          tx += 'Data de Nascimento<input class="txt1" id="dt'+element.id_atendido+'" value="'+ element.dt_nascimento +'" disabled>';
+          tx += 'CPF<input class="txt1" id="cpf'+element.id_atendido+'" value="'+ element.nr_cpf +'" disabled>';
+          tx += 'RG<input class="txt1" id="rg'+element.id_atendido+'" value="'+ element.nr_rg +'" disabled>' ;
+          tx += 'Principais Locais que se encontra<input class="txt1" id="inL'+element.id_atendido+'" value="'+ element.in_locais + '" disabled>';
+          tx += 'Mais descrições<input class="txt1" id="dsL'+element.id_atendido+'"value="'+ element.ds_locais +'" disabled>' ;
+          tx += 'Albergue/Abrigo<input class="txt1" id="ds_A'+element.id_atendido+'" value="'+ element.ds_albergue +'" disabled>';
+          tx += 'Domicilio Particular<input class="txt1" id="ds_domici'+element.id_atendido+'" value="'+ element.ds_domiciliopart +'" disabled>';
+          tx += 'Quantos dia na semana passa na rua<input class="txt1" id="qt_rua'+element.id_atendido+'" value="'+ element.qt_rua +'" disabled>';
+          tx += 'Quantos dias na semana passa em albergue<input class="txt1" id="qt_A'+element.id_atendido+'" value="'+ element.qt_albuergue +'" disabled>';
+          tx += 'Quantos dias na semana passa em domicilio particular<input class="txt1"  id="qt_dom'+element.id_atendido+'" value="'+ element.qt_domicilio +'" disabled>';
+          tx += 'Tempo que vive na rua<input class="txt1"  id="qt_mr'+element.id_atendido+'" value="'+ element.qt_morarua +'" disabled>';
+          tx += 'Motivo que fez morar na rua<input class="txt1" id="motivR'+element.id_atendido+'" value="'+ element.motivRua +'" disabled>';
+          tx += 'Tempo que vive nessa cidade<input class="txt1" id="tempC'+element.id_atendido+'" value="'+ element.TempCid +'" disabled>';
+          tx += 'Familia vive na rua?<input class="txt1" id="familia'+element.id_atendido+'" value="'+ element.st_familia +'" disabled>';
+          tx += 'Atividades comunitarias dos ultimos 6 meses <input class="txt1" id="ds_com'+element.id_atendido+'" value="'+ element.ds_comunitarias +'" disabled>';
+          tx += 'Locais em que foi atendido nos ultimos 6 meses<input class="txt1" id="ds_a'+element.id_atendido+'" value="'+ element.ds_atendido +'" disabled>';
+          tx += 'Se já teve carteira de trabalho assinada<input class="txt1" id="carteira'+element.id_atendido+'" value="'+ element.st_carteiratrab +'" disabled>';
+          tx += 'O que faz para ganhar dinheiro<input class="txt1" id="ds_r'+element.id_atendido+'" value="'+ element.ds_renda +'" disabled>';
+          tx += 'Está inserido em algum programa de renda?<input class="txt1" id="prog'+element.id_atendido+'" value="'+ element.ds_progrenda +'" disabled>';
+          tx += 'Qual?<input class="txt1" id="proGR'+element.id_atendido+'" value="'+ element.ds_programarenda +'" disabled>';
+          tx += 'Encaminhamento para serviço<input class="txt1" id="sd1'+element.id_atendido+'" value="'+ element.ecServico1_data +'" disabled>';
           tx += '<input class="txt1" id="s1'+element.id_atendido+'" value="'+ element.ecServico1 +'" disabled>';
-          tx += '<input class="txt1" id="sd2'+element.id_atendido+'" value="'+ element.ecServico2_data +'" disabled>';
+          tx += 'Encaminhamento para serviço<input class="txt1" id="sd2'+element.id_atendido+'" value="'+ element.ecServico2_data +'" disabled>';
           tx += '<input class="txt1" id="s2'+element.id_atendido+'" value="'+ element.ecServico2 +'" disabled>';
           tx += '<button class="smbtn" id="most'+element.id_atendido+'" onclick="lb('+element.id_atendido+')">Editar</button>'
 
@@ -142,6 +141,14 @@ var user = {
             dt_Serv2: dtS2,
             Serv2: ser2,
           },
+          success: data => { //Retorna o popUp de okay, caso esteja tudo certo
+            Swal.fire(
+              'Prontinho!',
+              'clique para fechar!',
+              'success'
+            )
+         
+        }
         })
           .done(function () {
             users.list();
@@ -737,7 +744,7 @@ var getBanhos = {
 
 
 
-function lb(a){
+function lb(a){ //função que vai habilidar a edição dos campos 
   
   var nm = (document.querySelector('#nome'+a+'').removeAttribute('disabled'));
   var dtNa = document.querySelector('#dt'+a+'').removeAttribute('disabled');
@@ -768,10 +775,10 @@ function lb(a){
   $("#most1").html(cont)
   }
 
-var ed = {
+var ed = { //função que vai fazer a edição dos dados 
 
 
-  edit(a) {
+  edit(a) { //aqui eu declaro as variaveis
     console.log(a)
     var nm = String(document.querySelector('#nome'+a+'').value);
     var dtNa = document.querySelector('#dt'+a+'').value;
@@ -800,11 +807,11 @@ var ed = {
     var service2 = document.querySelector('#s2'+a+'').value;
     console.log(nm)
 
-  $.ajax({
+  $.ajax({ //chamo o AJAX
     
-    url: api + '/editarUsuarios',
+    url: api + '/editarUsuarios', //requisição para o backend
     type: 'POST',
-    data: {
+    data: { //dados que serão atualizados
         userId: a,
         nm_nome: nm,
         dt_nas: dtNa,
@@ -831,7 +838,7 @@ var ed = {
         
 
     },
-    success: data => {
+    success: data => { //Retorna o popUp de okay, caso esteja tudo certo
       Swal.fire(
         'Prontinho!',
         'clique para fechar!',
