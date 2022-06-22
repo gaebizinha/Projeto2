@@ -1,15 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
-const hostname = '127.0.0.1';
+
  
 /* Servidor do Banco de Dados */
-const portback = 3061;
 const sqlite3 = require('sqlite3').verbose();
 const cors = require('cors')
 const server = express();
-const DBPATH = 'revirarDB.db';
-server.use(express.static("../Index"));
+const DBPATH = 'backend/revirarDB.db';
+server.use(express.static("Index/"));
 server.use(express.json());
 server.use(cors())
 server.use(bodyParser.urlencoded({ // Irá suportar urlenconded
@@ -105,7 +104,7 @@ server.delete('/excluiusuario', urlencodedParser, (req, res) => {
 
 //Endpoints tabela Doação------------------------------------------------------------------------------------------------------------------//
 /* Inicia o servidor */
-server.listen(portback, hostname, () => {
+server.listen(process.env.PORT () => {
 	console.log(`BD server running at http://${hostname}:${portback}/`);
   });
 
