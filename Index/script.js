@@ -772,7 +772,7 @@ function lb(a){ //função que vai habilidar a edição dos campos
   var serviceD2 = document.querySelector('#sd2'+a+'').removeAttribute('disabled');
   var service2 = document.querySelector('#s2'+a+'').removeAttribute('disabled');
   var cont ='<button class="smbtn" id="most'+a+'" onclick="ed.edit('+a+')">Salvar</button>'
-  $("#most1").html(cont)
+  $('#most'+a+'').html(cont)
   }
 
 var ed = { //função que vai fazer a edição dos dados 
