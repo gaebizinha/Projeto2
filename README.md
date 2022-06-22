@@ -5,21 +5,24 @@
 </p>
 
 # Nome do projeto
-
+Revirar
 ## Nome do grupo
-
+DevPandas 
 ## Integrantes: 
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 1</a>
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 2</a>
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 3</a> 
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 4</a> 
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 5</a>
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 6</a> 
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 7</a>
+<br/>
+- <a href="https://www.linkedin.com/in/emanuele-morais/">Emanuele Lacerda Morais Martins</a><br/>
+- <a href="https://www.linkedin.com/in/felipe-gomes-526186232/">Felipe Gomes Rodrigues dos Santos</a><br/>
+- <a href="https://www.linkedin.com/in/gabriela-de-morais-da-silva-467b29238/">Gabriela de Morais da Silva</a> <br/>
+- <a href="https://www.linkedin.com/in/victorbarq/">Igor Scapin Francisco Garcia</a><br/> 
+- <a href="https://www.linkedin.com/in/leandro-duarte/">Leandro Silva Duarte</a><br/>
+- <a href="https://www.linkedin.com/in/victorbarq/">Rafael Luftglas</a><br/> 
+- <a href="https://www.linkedin.com/in/rodrigo-campos-8b70191ab">Rodrigo Campos Rodrigues</a>
 
 ## 📝 Descrição
 
 Curta descrição sobre o que o seu projeto faz (problema a ser resolvido e solução proposta).
+
+O projeto Revirar precisa aumentar sua visibilidade, credibilidade e automatizar seus processos administrativos; para isso criamos uma aplicação web para solucionar o problema.
 
 ## 📁 Estrutura de pastas
 
