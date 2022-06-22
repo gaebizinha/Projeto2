@@ -8,7 +8,7 @@ const sqlite3 = require('sqlite3').verbose();
 const cors = require('cors')
 const server = express();
 const DBPATH = 'backend/revirarDB.db';
-server.use(express.static("Index/"));
+server.use(express.static("./Index/."));
 server.use(express.json());
 server.use(cors())
 server.use(bodyParser.urlencoded({ // Irá suportar urlenconded
