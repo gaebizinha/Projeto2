@@ -104,7 +104,7 @@ server.delete('/excluiusuario', urlencodedParser, (req, res) => {
 
 //Endpoints tabela Doação------------------------------------------------------------------------------------------------------------------//
 /* Inicia o servidor */
-server.listen(process.env.PORT () => {
+server.listen(process.env.PORT, () => {
 	console.log(`BD server running at http://${hostname}:${portback}/`);
   });
 
