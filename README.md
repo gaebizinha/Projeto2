@@ -15,7 +15,7 @@ DevPandas
 - <a href="https://www.linkedin.com/in/gabriela-de-morais-da-silva-467b29238/">Gabriela de Morais da Silva</a> <br/>
 - <a href="https://www.linkedin.com/in/igor-garcia-126a1823b/">Igor Scapin Francisco Garcia</a><br/> 
 - <a href="https://www.linkedin.com/in/leandro-duarte/">Leandro Silva Duarte</a><br/>
-- <a href="">Rafael Luftglas</a><br/> 
+- <a href="https://br.linkedin.com/in/rafael-luftglas-29606b224?trk=public_profile_samename-profile">Rafael Luftglas</a><br/> 
 - <a href="https://www.linkedin.com/in/rodrigo-campos-8b70191ab">Rodrigo Campos Rodrigues</a>
 
 ## 📝 Descrição
@@ -96,6 +96,8 @@ deve possuir o valor "node app.js".
 
 ## 🗃 Histórico de lançamentos
 
+* 0.3.0 - 22/06/2022
+    * Ajustes finais.
 * 0.2.2 - 09/06/2022
     * Conclusão das integrações.
 * 0.2.1 - 30/05/2022
