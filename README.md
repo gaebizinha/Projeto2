@@ -13,9 +13,9 @@ DevPandas
 - <a href="https://www.linkedin.com/in/emanuele-morais/">Emanuele Lacerda Morais Martins</a><br/>
 - <a href="https://www.linkedin.com/in/felipe-gomes-526186232/">Felipe Gomes Rodrigues dos Santos</a><br/>
 - <a href="https://www.linkedin.com/in/gabriela-de-morais-da-silva-467b29238/">Gabriela de Morais da Silva</a> <br/>
-- <a href="https://www.linkedin.com/in/victorbarq/">Igor Scapin Francisco Garcia</a><br/> 
+- <a href="https://www.linkedin.com/in/igor-garcia-126a1823b/">Igor Scapin Francisco Garcia</a><br/> 
 - <a href="https://www.linkedin.com/in/leandro-duarte/">Leandro Silva Duarte</a><br/>
-- <a href="https://www.linkedin.com/in/victorbarq/">Rafael Luftglas</a><br/> 
+- <a href="">Rafael Luftglas</a><br/> 
 - <a href="https://www.linkedin.com/in/rodrigo-campos-8b70191ab">Rodrigo Campos Rodrigues</a>
 
 ## 📝 Descrição
@@ -96,18 +96,18 @@ deve possuir o valor "node app.js".
 
 ## 🗃 Histórico de lançamentos
 
-* 0.2.1 - 25/01/2022
-    * Atualização de documentos (código do módulo permanece inalterado).
-* 0.2.0 - 15/01/2022
-    * Remove `setDefaultXYZ()`
-    * Adiciona `init()`
-* 0.1.1 - 11/01/2022
-    * Crash quando chama `baz()`
-* 0.1.0 - 10/01/2022
-    * O primeiro lançamento adequado
-    * Renomeia `foo()` para `bar()`
-* 0.0.1 - 01/01/2022
-    * Trabalho em andamento
+* 0.2.2 - 09/06/2022
+    * Conclusão das integrações.
+* 0.2.1 - 30/05/2022
+    * Conclusão dos endingPoints.
+* 0.2.0 - 26/05/2022
+    * Início do Backend.
+* 0.1.1 - 23/05/2022
+    * Iniciamos a colocar imagens.
+* 0.1.0 - 18/05/2022
+    * Iniciamos a adicionar os textos.
+* 0.0.1 - 16/05/2022
+    * Primeira versão dos Html.
 
 ## 📋 Licença/License
 
